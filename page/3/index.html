@@ -1,1811 +1,813 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
-  
-  
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.png">
-  
-  
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
     
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
     
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+
 </head>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/avatar.png" class="js-avatar">
-            
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
         </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">John Doe</a></h1>
+        <hgroup class="introduce">
+          <h5 class="nickname">John Doe</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
         </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
         
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
         
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
         
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
         
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
         
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
         
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  href="/archives/">所有文章</a></li>
-                        
-                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
-                
-            </div>
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
-    </header>
-</div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-Spring Boot带前后端 渐进式开发企业级博客系统"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 16:11:11" datetime="2018-02-22T08:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li></ul>
+
+
 
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>                
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-Spring Boot带前后端 渐进式开发企业级博客系统/">Spring Boot带前后端 渐进式开发企业级博客系统</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/125.html
+
+第1章 Spring Boot 简介1-1 Spring Boot博客课程导学
+1-2 -Spring Boot 是什么
+第2章 开启 Spring Boot 的第一个 Web 项目2-1 -初始化第一个Web项目
+2-2 -用Gradle编译项目
+2-3 -探索项目
+第3章 一个Hell...
+    
+
+        <a href="/2018/02/22/buy-Spring Boot带前后端 渐进式开发企业级博客系统/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-Spring Boot企业微信点餐系统"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 15:11:11" datetime="2018-02-22T07:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-Spring Boot企业微信点餐系统/">Spring Boot企业微信点餐系统</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/117.html
+
+第1章 课程介绍1-1 课程介绍
+第2章 项目设计2-1 项目设计
+2-2 架构和基础框架
+2-3 数据库设计
+第3章 项目起步3-1 开发环境搭建
+3-2 日志的使用
+3-3 源码下载及使用
+第4章 买家端类目4-1 买家类目-dao（上）
+4-2 买家类目-dao（下）
+4-3 买家类...
+    
+
+        <a href="/2018/02/22/buy-Spring Boot企业微信点餐系统/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-SSM到Spring Boot 从零开发校园商铺平台"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 14:11:11" datetime="2018-02-22T06:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-SSM到Spring Boot 从零开发校园商铺平台/">SSM到Spring Boot 从零开发校园商铺平台</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲教程详情地址：https://coding.imooc.com/class/144.html
+
+第1章 开发准备1-1 课程导学
+1-2 开发准备
+第2章 项目设计和框架搭建2-1 系统功能模块划分
+2-2 实体类设计与表创建A
+2-3 实体类设计与表创建B
+2-4 实体类设计与表创建C
+2-5 配置Maven
+2-6 逐层完成SSM的各项配置
+2-7 验证Dao
+2-8 验证Sev...
+    
+
+        <a href="/2018/02/22/buy-SSM到Spring Boot 从零开发校园商铺平台/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-程序猿的内功修炼，学好算法与数据结构"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 13:11:11" datetime="2018-02-22T05:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-程序猿的内功修炼，学好算法与数据结构/">程序猿的内功修炼，学好算法与数据结构</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲教程详情地址：https://coding.imooc.com/class/71.html
+第1章 当我们谈论算法的时候，我们在谈论什么？1-1 我们究竟为什么要学习算法
+1-2 课程介绍
+第2章 排序基础2-1 选择排序法 - Selection Sort
+2-2 使用模板（泛型）编写算法
+2-3 随机生成算法测试用例
+2-4 测试算法的性能
+2-5 插入排序法 - Inserti...
+    
+
+        <a href="/2018/02/22/buy-程序猿的内功修炼，学好算法与数据结构/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-高性能可扩展MySQL数据库设计及架构优化 电商项目"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 12:11:11" datetime="2018-02-22T04:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-高性能可扩展MySQL数据库设计及架构优化 电商项目/">高性能可扩展MySQL数据库设计及架构优化 电商项目</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲教程详情地址：https://coding.imooc.com/class/79.html
+第1章 数据库开发规范的制定1-1 课程说明
+1-2 课程准备
+1-3 电商项目简介
+1-4 数据库设计规范简介
+1-5 数据库命名规范
+1-6 数据库基础设计规范
+1-7 数据库索引设计规范
+1-8 数据库字段设计规范
+1-9 SQL开发规范
+1-10 数据库操作规范
+第2章 电商实例数据库...
+    
+
+        <a href="/2018/02/22/buy-高性能可扩展MySQL数据库设计及架构优化 电商项目/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-看的见的算法 7个经典应用诠释算法精髓"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 11:11:11" datetime="2018-02-22T03:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-看的见的算法 7个经典应用诠释算法精髓/">看的见的算法 7个经典应用诠释算法精髓</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/138.html
+
+第1章 欢迎来到看得见的算法1-1 欢迎来到看得见的算法
+1-2 学习这个课程将完成什么项目？
+1-3 关于本课程的编程环境
+1-4 更多学习本课程的注意事项
+第2章 要想看得见，先要搞定GUI编程2-1 使用JFrame
+2-2 创建属于自己的第一个JFrame子类
+2-3 设置画布与图...
+    
+
+        <a href="/2018/02/22/buy-看的见的算法 7个经典应用诠释算法精髓/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-让你页面速度飞起来 Web前端性能优化"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 10:11:11" datetime="2018-02-22T02:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-让你页面速度飞起来 Web前端性能优化/">让你页面速度飞起来 Web前端性能优化</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/130.html
+教程截图第1章 课程简介1-1 课程简介
+第2章 资源合并与压缩2-1 资源合并与压缩-http 清求的过程及潜在的性能优化点
+2-2 资源合并与压缩-html 压缩
+2-3 资源合并与压缩-css 及 js压缩
+2-4 资源合并与压缩-文件合并
+2-5 资源合并与压缩-实战-在线工具压缩
+...
+    
+
+        <a href="/2018/02/22/buy-让你页面速度飞起来 Web前端性能优化/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-微信小程序入门与实战 常用组件API开发技巧项目实战"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 09:11:11" datetime="2018-02-22T01:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/">微信小程序入门与实战 常用组件API开发技巧项目实战</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/75.html
+第1章 什么是微信小程序？1-1 序：十几个小时的课程就这节最重要
+1-2 开篇及课程特色介绍
+1-3 直观感受一下微信小程序
+1-4 小程序适合做什么样的应用
+1-5 对开发者的影响
+1-6 学习基础
+1-7 小作业
+第2章 小程序环境搭建与开发工具介绍2-1 开篇介绍及下载工具
+2-2 小...
+    
+
+        <a href="/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-buy-10小时入门大数据"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-02-22 08:11:11" datetime="2018-02-22T00:11:11.000Z"  itemprop="datePublished">2018-02-22</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/02/22/buy-10小时入门大数据/">10小时入门大数据</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        课程大纲来自慕课教程：https://coding.imooc.com/class/128.html   【获取方式在末尾】
+第1章 大数据概述1-1 导学
+1-2 章节安排_
+1-3 OOTB镜像文件和虚拟机的使用
+1-4 说两则故事说起
+1-5 大数据与生活息息相关
+1-6 大数据基本概念
+1-7 大数据带来的挑战
+1-8 如何应对大数据带来的挑战
+1-9 -如何学好大数据
+第2章 初识...
+    
+
+        <a href="/2018/02/22/buy-10小时入门大数据/" class="post-more waves-effect waves-button">
+            続きを読む…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-buy-Spring Boot带前后端 渐进式开发企业级博客系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-Spring Boot带前后端 渐进式开发企业级博客系统/" class="article-date">
-      <time datetime="2018-02-22T08:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-Spring Boot带前后端 渐进式开发企业级博客系统/">Spring Boot带前后端 渐进式开发企业级博客系统</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/125.html" target="_blank" rel="noopener">https://coding.imooc.com/class/125.html</a></p>
-<p><img src="http://img.blog.csdn.net/20180222141329225?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222141418849?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-Spring-Boot-简介"><a href="#第1章-Spring-Boot-简介" class="headerlink" title="第1章 Spring Boot 简介"></a>第1章 Spring Boot 简介</h5><p>1-1 <em>Spring Boot博客</em>课程导学</p>
-<p>1-2 -Spring Boot 是什么</p>
-<h5 id="第2章-开启-Spring-Boot-的第一个-Web-项目"><a href="#第2章-开启-Spring-Boot-的第一个-Web-项目" class="headerlink" title="第2章 开启 Spring Boot 的第一个 Web 项目"></a>第2章 开启 Spring Boot 的第一个 Web 项目</h5><p>2-1 -初始化第一个Web项目</p>
-<p>2-2 -用Gradle编译项目</p>
-<p>2-3 -探索项目</p>
-<h5 id="第3章-一个Hello-World项目"><a href="#第3章-一个Hello-World项目" class="headerlink" title="第3章 一个Hello World项目"></a>第3章 一个Hello World项目</h5><p>3-1 -编写项目构建信息</p>
-<p>3-2 -自定义存储库，加速构建</p>
-<p>3-3 -编写程序代码及测试用例</p>
-<p>3-4 -配置Wrapper，运行程序</p>
-<h5 id="第4章-开发环境的搭建"><a href="#第4章-开发环境的搭建" class="headerlink" title="第4章 开发环境的搭建"></a>第4章 开发环境的搭建</h5><p>4-1 -IDE及插件的安装配置</p>
-<p>4-2 -导入项目到IDE，运行</p>
-<h5 id="第5章-集成Thymeleaf模版引擎"><a href="#第5章-集成Thymeleaf模版引擎" class="headerlink" title="第5章 集成Thymeleaf模版引擎"></a>第5章 集成Thymeleaf模版引擎</h5><p>5-1 -Thymeleaf 简介</p>
-<p>5-2 -Thymeleaf 标准方言</p>
-<p>5-3 -Thymeleaf 标准表达式语法</p>
-<p>5-4 -设置属性值</p>
-<p>5-5 -迭代器</p>
-<p>5-6 -条件语句</p>
-<p>5-7 -模版布局</p>
-<p>5-8 -属性优先级</p>
-<p>5-9 -注释</p>
-<p>5-10 -内联</p>
-<p>5-11 -表达式基本对象</p>
-<p>5-12 -表达式工具对象</p>
-<p>5-13 -Thymeleaf 与 Spring Boot 集成</p>
-<p>5-14 -Thymeleaf实战-导入IDE，配置项目</p>
-<p>5-15 -Thymeleaf实战-API设计</p>
-<p>5-16 -Thymeleaf实战-后台编码</p>
-<p>5-17 -Thymeleaf实战-前台编码-01</p>
-<p>5-18 -Thymeleaf实战-前台编码-02</p>
-<p>5-19 -Thymeleaf实战-前台编码-03</p>
-<h5 id="第6章-数据持久化Spring-Data-JPA"><a href="#第6章-数据持久化Spring-Data-JPA" class="headerlink" title="第6章 数据持久化Spring Data JPA"></a>第6章 数据持久化Spring Data JPA</h5><p>6-1 -JPA 简介</p>
-<p>6-2 -Spring Data JPA 用法介绍</p>
-<p>6-3 -Spring Data JPA、Hibernate 与 Spring Boot 集成</p>
-<p>6-4 -集成过程测试，集成H2数据库</p>
-<p>6-5 -后台编码</p>
-<p>6-6 -持久化数据到H2</p>
-<p>6-7 -持久化数据到MySQL</p>
-<h5 id="第7章-全文搜索ElasticSearch"><a href="#第7章-全文搜索ElasticSearch" class="headerlink" title="第7章 全文搜索ElasticSearch"></a>第7章 全文搜索ElasticSearch</h5><p>7-1 -全文搜索概述</p>
-<p>7-2 -ElasticSearch 简介</p>
-<p>7-3 -ElasticSearch 核心概念</p>
-<p>7-4 -Elasticsearch 与 Spring Boot 集成</p>
-<p>7-5 -Elasticsearch 实-文档、资源库、测试用例</p>
-<p>7-6 -Elasticsearch 实-控制器</p>
-<h5 id="第8章-架构设计与分层"><a href="#第8章-架构设计与分层" class="headerlink" title="第8章 架构设计与分层"></a>第8章 架构设计与分层</h5><p>8-1 -不分层的问题</p>
-<p>8-2 -应用分层</p>
-<p>8-3 -三层架构</p>
-<p>8-4 -系统的架构设计及职责划分</p>
-<h5 id="第9章-集成-Bootstrap"><a href="#第9章-集成-Bootstrap" class="headerlink" title="第9章 集成 Bootstrap"></a>第9章 集成 Bootstrap</h5><p>9-1 -Bootstrap 简介</p>
-<p>9-2 -Bootstrap 核心概念</p>
-<p>9-3 -Bootstrap 及常用前端框架与 Spring Boot 集成</p>
-<p>9-4 -集成演示</p>
-<p>9-5 -Bootstrap实战</p>
-<h5 id="第10章-博客系统的需求分析与原型设计"><a href="#第10章-博客系统的需求分析与原型设计" class="headerlink" title="第10章 博客系统的需求分析与原型设计"></a>第10章 博客系统的需求分析与原型设计</h5><p>10-1 -需求分析</p>
-<p>10-2 -原型设计</p>
-<h5 id="第11章-权限管理Spring-Security"><a href="#第11章-权限管理Spring-Security" class="headerlink" title="第11章 权限管理Spring Security"></a>第11章 权限管理Spring Security</h5><p>11-1 -基于角色的权限管理</p>
-<p>11-2 -Spring Security 简介</p>
-<p>11-3 -Spring Security 与 Spring Boot 集成</p>
-<p>11-4 -Spring Security 实战-后台编码</p>
-<p>11-5 -Spring Security 实战-前台编码</p>
-<h5 id="第12章-博客系统的整体框架实现"><a href="#第12章-博客系统的整体框架实现" class="headerlink" title="第12章 博客系统的整体框架实现"></a>第12章 博客系统的整体框架实现</h5><p>12-1 -整体的需求回顾</p>
-<p>12-2 -后台整体控制层、API 实现</p>
-<p>12-3 -前台整体布局实现</p>
-<p>12-4 -API 讲解</p>
-<h5 id="第13章-博客系统的用户管理实现"><a href="#第13章-博客系统的用户管理实现" class="headerlink" title="第13章 博客系统的用户管理实现"></a>第13章 博客系统的用户管理实现</h5><p>13-1 -用户管理的需求回顾</p>
-<p>13-2 -后台实现-1</p>
-<p>13-3 -后台实现-2</p>
-<p>13-4 -前台实现、测试-1</p>
-<p>13-5 -前台实现、测试-2</p>
-<h5 id="第14章-博客系统的角色管理实现"><a href="#第14章-博客系统的角色管理实现" class="headerlink" title="第14章 博客系统的角色管理实现"></a>第14章 博客系统的角色管理实现</h5><p>14-1 -角色管理的需求回顾</p>
-<p>14-2 -后台实现-</p>
-<p>14-3 -前台实现</p>
-<h5 id="第15章-博客系统的权限管理实现"><a href="#第15章-博客系统的权限管理实现" class="headerlink" title="第15章 博客系统的权限管理实现"></a>第15章 博客系统的权限管理实现</h5><p>15-1 -权限管理的需求回顾</p>
-<p>15-2 -后台编码-</p>
-<p>15-3 -CSRF防护的处理</p>
-<p>15-4 -前台实现、测试</p>
-<h5 id="第16章-博客系统的博客管理实现"><a href="#第16章-博客系统的博客管理实现" class="headerlink" title="第16章 博客系统的博客管理实现"></a>第16章 博客系统的博客管理实现</h5><p>16-1 -博客管理的需求回顾</p>
-<p>16-2 -个人设置、头像变更</p>
-<p>16-3 -后台实现</p>
-<p>16-4 -前台实现、测试-</p>
-<h5 id="第17章-博客系统的评论管理实现"><a href="#第17章-博客系统的评论管理实现" class="headerlink" title="第17章 博客系统的评论管理实现"></a>第17章 博客系统的评论管理实现</h5><p>17-1 -评论管理的需求回顾</p>
-<p>17-2 -后台实现</p>
-<p>17-3 -前台实现、测试_</p>
-<h5 id="第18章-博客系统的点赞管理实现"><a href="#第18章-博客系统的点赞管理实现" class="headerlink" title="第18章 博客系统的点赞管理实现"></a>第18章 博客系统的点赞管理实现</h5><p>18-1 -点赞管理的需求回顾</p>
-<p>18-2 -后台实现_</p>
-<p>18-3 -前台实现 测试</p>
-<h5 id="第19章-博客系统的分类管理实现"><a href="#第19章-博客系统的分类管理实现" class="headerlink" title="第19章 博客系统的分类管理实现"></a>第19章 博客系统的分类管理实现</h5><p>19-1 -分类管理的需求回顾</p>
-<p>19-2 -后台实现 -</p>
-<p>19-3 -前台实现、测试1</p>
-<h5 id="第20章-博客系统的标签管理实现"><a href="#第20章-博客系统的标签管理实现" class="headerlink" title="第20章 博客系统的标签管理实现"></a>第20章 博客系统的标签管理实现</h5><p>20-1 -标签管理的需求回顾</p>
-<p>20-2 -后台实现_1</p>
-<p>20-3 -前台实现、测试_1</p>
-<h5 id="第21章-博客系统的搜索实现"><a href="#第21章-博客系统的搜索实现" class="headerlink" title="第21章 博客系统的搜索实现"></a>第21章 博客系统的搜索实现</h5><p>21-1 -搜索的需求回顾</p>
-<p>21-2 -后台实现_0</p>
-<p>21-3 -前台实现_0</p>
-<p>21-4 -测试</p>
-<h5 id="第22章-博客系统总结"><a href="#第22章-博客系统总结" class="headerlink" title="第22章 博客系统总结"></a>第22章 博客系统总结</h5><p>22-1 -后台项目结构</p>
-<p>22-2 -前台项目结构</p>
-<p>22-3 -系统集成、系统测试</p>
-<p>22-4 -总结</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222141719585?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222141727745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222141734132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222141741509?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java系列视频教程/">java系列视频教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-Spring Boot企业微信点餐系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-Spring Boot企业微信点餐系统/" class="article-date">
-      <time datetime="2018-02-22T07:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-Spring Boot企业微信点餐系统/">Spring Boot企业微信点餐系统</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/117.html" target="_blank" rel="noopener">https://coding.imooc.com/class/117.html</a></p>
-<p><img src="http://img.blog.csdn.net/20180222135555581?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022213560412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-课程介绍"><a href="#第1章-课程介绍" class="headerlink" title="第1章 课程介绍"></a>第1章 课程介绍</h5><p>1-1 课程介绍</p>
-<h5 id="第2章-项目设计"><a href="#第2章-项目设计" class="headerlink" title="第2章 项目设计"></a>第2章 项目设计</h5><p>2-1 项目设计</p>
-<p>2-2 架构和基础框架</p>
-<p>2-3 数据库设计</p>
-<h5 id="第3章-项目起步"><a href="#第3章-项目起步" class="headerlink" title="第3章 项目起步"></a>第3章 项目起步</h5><p>3-1 开发环境搭建</p>
-<p>3-2 日志的使用</p>
-<p>3-3 源码下载及使用</p>
-<h5 id="第4章-买家端类目"><a href="#第4章-买家端类目" class="headerlink" title="第4章 买家端类目"></a>第4章 买家端类目</h5><p>4-1 买家类目-dao（上）</p>
-<p>4-2 买家类目-dao（下）</p>
-<p>4-3 买家类目-service</p>
-<h5 id="第5章-买家端商品"><a href="#第5章-买家端商品" class="headerlink" title="第5章 买家端商品"></a>第5章 买家端商品</h5><p>5-1 买家商品-dao</p>
-<p>5-2 买家商品-service</p>
-<p>5-3 买家商品-api（上）</p>
-<p>5-4 买家商品-api（下）</p>
-<h5 id="第6章-买家端订单"><a href="#第6章-买家端订单" class="headerlink" title="第6章 买家端订单"></a>第6章 买家端订单</h5><p>6-1 买家订单-dao(上)</p>
-<p>6-2 买家订单-dao(下)</p>
-<p>6-3 买家订单-service创建_A</p>
-<p>6-4 买家订单-service创建_B</p>
-<p>6-5 买家订单-service创建_C</p>
-<p>6-6 买家订单-service创建_D</p>
-<p>6-7 买家订单-service查询</p>
-<p>6-8 买家订单-service取消</p>
-<p>6-9 买家订单-service finish和paid</p>
-<p>6-10 买家订单-api_A</p>
-<p>6-11 买家订单-api_B</p>
-<p>6-12 买家订单-api_C</p>
-<p>6-13 买家订单-api_D</p>
-<h5 id="第7章-微信授权"><a href="#第7章-微信授权" class="headerlink" title="第7章 微信授权"></a>第7章 微信授权</h5><p>7-1 设置域名</p>
-<p>7-2 获取code</p>
-<p>7-3 换取access_token</p>
-<p>7-4 使用sdk方式（上）</p>
-<p>7-5 使用sdk方式（下）</p>
-<p>7-6 微信网页授权前端调试</p>
-<h5 id="第8章-微信支付和退款"><a href="#第8章-微信支付和退款" class="headerlink" title="第8章 微信支付和退款"></a>第8章 微信支付和退款</h5><p>8-1 发起微信支付-后端（上）</p>
-<p>8-2 发起微信支付-后端（下）</p>
-<p>8-3 在网页发起支付</p>
-<p>8-4 动态注入参数发起支付</p>
-<p>8-5 微信异步通知（上）</p>
-<p>8-6 微信异步通知（下）</p>
-<p>8-7 微信退款</p>
-<p>8-8 补充：使用测试号实现授权</p>
-<h5 id="第9章-卖家端订单"><a href="#第9章-卖家端订单" class="headerlink" title="第9章 卖家端订单"></a>第9章 卖家端订单</h5><p>9-1 卖家订单-service</p>
-<p>9-2 卖家-订单-controller（上）</p>
-<p>9-3 卖家-订单-controller（下）</p>
-<p>9-4 卖家订单-controller-翻页</p>
-<p>9-5 卖家订单-controller-取消订单</p>
-<p>9-6 卖家订单-controller-订单详情</p>
-<p>9-7 卖家订单-controller-完结订单</p>
-<h5 id="第10章-卖家端通用功能和上下架"><a href="#第10章-卖家端通用功能和上下架" class="headerlink" title="第10章 卖家端通用功能和上下架"></a>第10章 卖家端通用功能和上下架</h5><p>10-1 关于模版的小技巧</p>
-<p>10-2 实现边栏</p>
-<p>10-3 实现商品列表</p>
-<p>10-4 商品上下架-service</p>
-<p>10-5 商品上下架-controller</p>
-<h5 id="第11章-卖家端新增商品和类目"><a href="#第11章-卖家端新增商品和类目" class="headerlink" title="第11章 卖家端新增商品和类目"></a>第11章 卖家端新增商品和类目</h5><p>11-1 卖家商品-新增修改页面</p>
-<p>11-2 卖家商品-修改表单提交</p>
-<p>11-3 卖家商品-新增功能</p>
-<p>11-4 卖家类目功能开发</p>
-<h5 id="第12章-买家和卖家端联通"><a href="#第12章-买家和卖家端联通" class="headerlink" title="第12章 买家和卖家端联通"></a>第12章 买家和卖家端联通</h5><p>12-1 分布式session理论(上)</p>
-<p>12-2 分布式session理论(下)</p>
-<p>12-3 卖家信息表-dao开发</p>
-<p>12-4 卖家扫码登录service开发</p>
-<p>12-5 卖家扫码登录获取openid</p>
-<p>12-6 登录成功</p>
-<p>12-7 登出成功</p>
-<p>12-8 AOP实现身份验证</p>
-<p>12-9 微信模版消息推送</p>
-<p>12-10 webSocket消息推送</p>
-<h5 id="第13章-项目优化"><a href="#第13章-项目优化" class="headerlink" title="第13章 项目优化"></a>第13章 项目优化</h5><p>13-1 异常捕获</p>
-<p>13-2 mybatis注解方式使用_A</p>
-<p>13-3 mybatis注解方式使用_B</p>
-<p>13-4 mybatis xml方式使用</p>
-<p>13-5 jpa和mybatis的选择</p>
-<p>13-6 ab压测介绍</p>
-<p>13-7 synchronized处理并发</p>
-<p>13-8 redis分布式锁</p>
-<p>13-9 redis缓存的使用(上)</p>
-<p>13-10 redis缓存的使用(下)</p>
-<h5 id="第14章-项目部署"><a href="#第14章-项目部署" class="headerlink" title="第14章 项目部署"></a>第14章 项目部署</h5><p>14-1 项目部署</p>
-<h5 id="第15章-课程总结"><a href="#第15章-课程总结" class="headerlink" title="第15章 课程总结"></a>第15章 课程总结</h5><p>15-1 13.总结</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222135821808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135828929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135838487?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135845808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java系列视频教程/">java系列视频教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-SSM到Spring Boot 从零开发校园商铺平台" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-SSM到Spring Boot 从零开发校园商铺平台/" class="article-date">
-      <time datetime="2018-02-22T06:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-SSM到Spring Boot 从零开发校园商铺平台/">SSM到Spring Boot 从零开发校园商铺平台</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>教程详情地址：<a href="https://coding.imooc.com/class/144.html" target="_blank" rel="noopener">https://coding.imooc.com/class/144.html</a></p>
-<p><img src="http://img.blog.csdn.net/20180222134403958?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222134417975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-开发准备"><a href="#第1章-开发准备" class="headerlink" title="第1章 开发准备"></a>第1章 开发准备</h5><p>1-1 课程导学</p>
-<p>1-2 开发准备</p>
-<h5 id="第2章-项目设计和框架搭建"><a href="#第2章-项目设计和框架搭建" class="headerlink" title="第2章 项目设计和框架搭建"></a>第2章 项目设计和框架搭建</h5><p>2-1 系统功能模块划分</p>
-<p>2-2 实体类设计与表创建A</p>
-<p>2-3 实体类设计与表创建B</p>
-<p>2-4 实体类设计与表创建C</p>
-<p>2-5 配置Maven</p>
-<p>2-6 逐层完成SSM的各项配置</p>
-<p>2-7 验证Dao</p>
-<p>2-8 验证Sevice</p>
-<p>2-9 验证Controller</p>
-<p>2-10 彩蛋时间</p>
-<h5 id="第3章-Logback配置与使用"><a href="#第3章-Logback配置与使用" class="headerlink" title="第3章 Logback配置与使用"></a>第3章 Logback配置与使用</h5><p>3-1 logback介绍</p>
-<p>3-2 logback的配置</p>
-<p>3-3 验证配置</p>
-<h5 id="第4章-店铺注册功能模块"><a href="#第4章-店铺注册功能模块" class="headerlink" title="第4章 店铺注册功能模块"></a>第4章 店铺注册功能模块</h5><p>4-1 Dao层之新增店铺</p>
-<p>4-2 Dao层之更新店铺</p>
-<p>4-3 Thumbnailator图片处理和封装Util</p>
-<p>4-4 Dto之ShopExecution的实现</p>
-<p>4-5 店铺注册之Service层的实现</p>
-<p>4-6 店铺注册功能之Controller层的实现(上)</p>
-<p>4-7 店铺注册功能之Controller层的实现(下)</p>
-<p>4-8 店铺注册功能之Controller层的改造</p>
-<p>4-9 店铺注册之前端设计</p>
-<p>4-10 店铺注册之js实现</p>
-<p>4-11 店铺类别区域信息的获取</p>
-<p>4-12 引入kaptcha实现验证码</p>
-<p>4-13 前后端联调验证整体模块功能</p>
-<h5 id="第5章-主从库同步与读写分离"><a href="#第5章-主从库同步与读写分离" class="headerlink" title="第5章 主从库同步与读写分离"></a>第5章 主从库同步与读写分离</h5><p>5-1 主从同步理论知识讲解</p>
-<p>5-2 主从同步数据库配置</p>
-<p>5-3 代码层读写分离的实现A</p>
-<p>5-4 代码层读写分离的实现B</p>
-<p>5-5 代码层读写分离的实现C</p>
-<p>5-6 读写分离外传_总结</p>
-<h5 id="第6章-店铺编辑和列表功能"><a href="#第6章-店铺编辑和列表功能" class="headerlink" title="第6章 店铺编辑和列表功能"></a>第6章 店铺编辑和列表功能</h5><p>6-1 店铺信息编辑之Dao层开发</p>
-<p>6-2 店铺信息编辑之Service层的实现</p>
-<p>6-3 店铺信息编辑之Controller层实现</p>
-<p>6-4 店铺信息编辑之前端实现</p>
-<p>6-5 店铺列表展示之Dao层的实现</p>
-<p>6-6 店铺列表展示之Service层的实现</p>
-<p>6-7 店铺列表展示之Contoller层的实现</p>
-<p>6-8 店铺列表展示前端开发</p>
-<p>6-9 店铺管理页面的前端开发</p>
-<h5 id="第7章-商品类别模块"><a href="#第7章-商品类别模块" class="headerlink" title="第7章 商品类别模块"></a>第7章 商品类别模块</h5><p>7-1 第一次家庭作业：商品类别列表展示</p>
-<p>7-2 公布答案：商品类别列表展示从后到前</p>
-<p>7-3 商品类别批量添加后端开发</p>
-<p>7-4 商品类别批量添加的前端开发</p>
-<p>7-5 商品类别删除后端开发</p>
-<p>7-6 商品类别删除前端开发</p>
-<h5 id="第8章-商品模块"><a href="#第8章-商品模块" class="headerlink" title="第8章 商品模块"></a>第8章 商品模块</h5><p>8-1 商品添加之Dao层的实现</p>
-<p>8-2 商品添加之Service层的实现上</p>
-<p>8-3 商品添加之Service层的实现下</p>
-<p>8-4 商品添加之Controller层的实现</p>
-<p>8-5 商品添加之前端实现上</p>
-<p>8-6 商品添加之前端实现下</p>
-<p>8-7 商品编辑之后端开发上</p>
-<p>8-8 商品编辑之后端开发下</p>
-<p>8-9 商品编辑之前端实现</p>
-<p>8-10 商品列表展示之后端开发</p>
-<p>8-11 商品列表展示之前端开发</p>
-<p>8-12 解除商品与某商品类别的关联的实现</p>
-<h5 id="第9章-前端展示系统"><a href="#第9章-前端展示系统" class="headerlink" title="第9章 前端展示系统"></a>第9章 前端展示系统</h5><p>9-1 首页后台的开发</p>
-<p>9-2 首页前端的开发上</p>
-<p>9-3 首页前端的开发下</p>
-<p>9-4 店铺列表页后端的开发</p>
-<p>9-5 店铺列表页前端的开发上</p>
-<p>9-6 店铺列表页前端的开发下</p>
-<p>9-7 店铺详情页的开发上</p>
-<p>9-8 店铺详情页的开发下</p>
-<p>9-9 商品详情页的开发</p>
-<p>9-10 前端展示系统bug修复</p>
-<p>9-11 前端展示系统开发总结</p>
-<h5 id="第10章-阿里云部署及远程微信开发调试心得与技巧"><a href="#第10章-阿里云部署及远程微信开发调试心得与技巧" class="headerlink" title="第10章 阿里云部署及远程微信开发调试心得与技巧"></a>第10章 阿里云部署及远程微信开发调试心得与技巧</h5><p>10-1 阿里云初始化与执行环境安装</p>
-<p>10-2 项目打包发布与域名解析</p>
-<p>10-3 微信测试号的申请与连接上</p>
-<p>10-4 微信测试号的申请与连接下</p>
-<p>10-5 Eclipse远程调试上</p>
-<p>10-6 Eclipse远程调试下</p>
-<p>10-7 微信登录帐号的创建上</p>
-<p>10-8 微信登录帐号的创建中</p>
-<p>10-9 微信登录帐号的创建下</p>
-<h5 id="第11章-我们可以做得更好"><a href="#第11章-我们可以做得更好" class="headerlink" title="第11章 我们可以做得更好"></a>第11章 我们可以做得更好</h5><p>11-1 对关键配置信息进行DES加密上</p>
-<p>11-2 对关键配置信息进行DES加密下</p>
-<p>11-3 -1引入缓存技术之理论讲解</p>
-<p>11-4 -2引入缓存技术之配置讲解</p>
-<p>11-5 -3引入缓存技术之编码实现上</p>
-<p>11-6 -4引入缓存技术之编码实现下</p>
-<p>11-7 -1添加平台帐号体系之需求分析和效果演示</p>
-<p>11-8 -2添加平台帐号体系之Dao层的开发</p>
-<p>11-9 -3添加平台帐号体系之Service层的开发</p>
-<p>11-10 -4添加平台帐号体系之Controller层的开发_x264</p>
-<p>11-11 -5添加平台帐号体系之前端实现上</p>
-<p>11-12 -5添加平台帐号体系之前端实现下</p>
-<p>11-13 -1添加拦截器上</p>
-<p>11-14 -2添加拦截器下</p>
-<p>11-15 定期备份数据的实现</p>
-<h5 id="第12章-项目2-0设计"><a href="#第12章-项目2-0设计" class="headerlink" title="第12章 项目2.0设计"></a>第12章 项目2.0设计</h5><p>12-1 项目2.0功能总览</p>
-<p>12-2 实体类及对应表的设计</p>
-<p>12-3 给商品增加积分字段及相应的程序改动</p>
-<h5 id="第13章-框架大换血"><a href="#第13章-框架大换血" class="headerlink" title="第13章 框架大换血"></a>第13章 框架大换血</h5><p>13-1 SpringBoot的理论知识</p>
-<p>13-2 SpringBoot的搭建与启动</p>
-<p>13-3 pom的迁移</p>
-<p>13-4 dao的迁移上</p>
-<p>13-5 dao的迁移下</p>
-<p>13-6 service的迁移</p>
-<p>13-7 web层的迁移_</p>
-<p>13-8 前端页面的迁移</p>
-<p>13-9 验证码的迁移</p>
-<p>13-10 替代docBase配置以实现图片的加载</p>
-<p>13-11 拦截器的迁移</p>
-<p>13-12 PathUtil的改进</p>
-<p>13-13 项目的打包与部署</p>
-<p>13-14 -部署补充</p>
-<p>13-15 本章小结</p>
-<h5 id="第14章-店家管理系统增强"><a href="#第14章-店家管理系统增强" class="headerlink" title="第14章 店家管理系统增强"></a>第14章 店家管理系统增强</h5><p>14-1 AwardDao的开发与测试</p>
-<p>14-2 UserAwardMapDao的开发与测试</p>
-<p>14-3 UserProductDao的开发与测试</p>
-<p>14-4 ProductSellDailyDao的开发与测试</p>
-<p>14-5 UserShopMapDao的开发与测试</p>
-<p>14-6 ShopAuthMapDao的开发与测试</p>
-<p>14-7 店铺授权之service层编码及最终效果展示</p>
-<p>14-8 店铺授权之二维码工具类的编写</p>
-<p>14-9 店铺授权之列表展示和授权修改的实现</p>
-<p>14-10 店铺授权之访问微信获取用户信息的URL的剥离</p>
-<p>14-11 店铺授权之短链接的实现</p>
-<p>14-12 店铺授权之授权二维码的生成</p>
-<p>14-13 店铺授权之添加授权的编码实现</p>
-<p>14-14 店铺授权之部署以及远程调试</p>
-<h5 id="第15章-前端展示系统增强和超级管理员模块"><a href="#第15章-前端展示系统增强和超级管理员模块" class="headerlink" title="第15章 前端展示系统增强和超级管理员模块"></a>第15章 前端展示系统增强和超级管理员模块</h5><p>15-1 -学习目标</p>
-<p>15-2 将Quartz引入到框架里</p>
-<p>15-3 定时统计店铺的商品日销量</p>
-<p>15-4 店铺销量基础service和controller的编写</p>
-<p>15-5 店铺销量统计前端开发</p>
-<p>15-6 Echarts的动态化改写上</p>
-<p>15-7 Echarts的动态化改写下</p>
-<p>15-8 Echarts的动态化验证</p>
-<p>15-9 店家管理系统剩余功能开发之消费记录展示更改</p>
-<p>15-10 前端展示系统补强之店铺详情页的修改</p>
-<p>15-11 店家管理系统剩余功能开发之顾客积分页的开发</p>
-<p>15-12 店家管理系统剩余功能开发之奖品领取页的开发</p>
-<p>15-13 店家管理系统剩余功能开发之奖品管理页的开发</p>
-<p>15-14 店家管理系统剩余功能开发之奖品操作页的开发</p>
-<p>15-15 前端展示系统补强之店铺奖品列表页的开发</p>
-<p>15-16 前端展示系统补强之奖品兑换记录列表页的开发</p>
-<p>15-17 前端展示系统补强之消费记录二维码的生成以及消费记录的添加</p>
-<p>15-18 前端展示系统补强之奖品兑换记录详情页的开发上</p>
-<p>15-19 前端展示系统补强之奖品兑换记录详情页的开发下</p>
-<p>15-20 前端展示系统补强之消费记录列表页的开发</p>
-<p>15-21 前端展示系统补强之顾客各店铺积分列表页的开发</p>
-<p>15-22 前端展示系统补强之奖品详情页的开发</p>
-<p>15-23 超级管理员系统提点</p>
-<h5 id="第16章-课程总结"><a href="#第16章-课程总结" class="headerlink" title="第16章 课程总结"></a>第16章 课程总结</h5><p>16-1 教程总结</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222134532662?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222134540988?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222134550326?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222134601231?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java系列视频教程/">java系列视频教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-程序猿的内功修炼，学好算法与数据结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-程序猿的内功修炼，学好算法与数据结构/" class="article-date">
-      <time datetime="2018-02-22T05:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-程序猿的内功修炼，学好算法与数据结构/">程序猿的内功修炼，学好算法与数据结构</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>教程详情地址：<a href="https://coding.imooc.com/class/71.html" target="_blank" rel="noopener">https://coding.imooc.com/class/71.html</a><br><img src="http://img.blog.csdn.net/20180222133248322?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222133258481?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-当我们谈论算法的时候，我们在谈论什么？"><a href="#第1章-当我们谈论算法的时候，我们在谈论什么？" class="headerlink" title="第1章 当我们谈论算法的时候，我们在谈论什么？"></a>第1章 当我们谈论算法的时候，我们在谈论什么？</h5><p>1-1 我们究竟为什么要学习算法</p>
-<p>1-2 课程介绍</p>
-<h5 id="第2章-排序基础"><a href="#第2章-排序基础" class="headerlink" title="第2章 排序基础"></a>第2章 排序基础</h5><p>2-1 选择排序法 - Selection Sort</p>
-<p>2-2 使用模板（泛型）编写算法</p>
-<p>2-3 随机生成算法测试用例</p>
-<p>2-4 测试算法的性能</p>
-<p>2-5 插入排序法 - Insertion Sort</p>
-<p>2-6 插入排序法的改进</p>
-<p>2-7 更多关于O(n^2)排序算法的思考</p>
-<h5 id="第3章-高级排序算法"><a href="#第3章-高级排序算法" class="headerlink" title="第3章 高级排序算法"></a>第3章 高级排序算法</h5><p>3-1 归并排序法 - Merge Sort</p>
-<p>3-2 归并排序法的实现</p>
-<p>3-3 归并排序法的优化</p>
-<p>3-4 自底向上的归并排序算法</p>
-<p>3-5 快速排序法 - Quick Sort</p>
-<p>3-6 随机化快速排序法</p>
-<p>3-7 双路快速排序法</p>
-<p>3-8 三路快速排序法</p>
-<p>3-9 归并排序和快速排序的衍生问题</p>
-<h5 id="第4章-堆和堆排序"><a href="#第4章-堆和堆排序" class="headerlink" title="第4章 堆和堆排序"></a>第4章 堆和堆排序</h5><p>4-1 为什么使用堆？</p>
-<p>4-2 堆的基本存储</p>
-<p>4-3 Shift Up</p>
-<p>4-4 Shift Down</p>
-<p>4-5 基础堆排序和Heapify</p>
-<p>4-6 优化的堆排序（Heap Sort）</p>
-<p>4-7 排序算法总结</p>
-<p>4-8 索引堆(Index Heap)</p>
-<p>4-9 索引堆的优化</p>
-<p>4-10 和堆相关的其他问题</p>
-<h5 id="第5章-二分搜索树"><a href="#第5章-二分搜索树" class="headerlink" title="第5章 二分搜索树"></a>第5章 二分搜索树</h5><p>5-1 二分查找法（Binary Search）</p>
-<p>5-2 二分搜索树基础 （Binary Search Tree）</p>
-<p>5-3 二分搜索树的节点插入</p>
-<p>5-4 二分搜索树的查找</p>
-<p>5-5 二分搜索树的遍历（深度优先遍历）</p>
-<p>5-6 层序遍历（广度优先遍历）</p>
-<p>5-7 删除最大值，最小值</p>
-<p>5-8 二分搜索树节点的删除（Hubbard Deletion）</p>
-<p>5-9 二分搜索树的顺序性</p>
-<p>5-10 二分搜索树的局限性</p>
-<p>5-11 树形问题和更多树</p>
-<h5 id="第6章-并查集"><a href="#第6章-并查集" class="headerlink" title="第6章 并查集"></a>第6章 并查集</h5><p>6-1 并查集基础（Union Find）</p>
-<p>6-2 Quick Find</p>
-<p>6-3 Quick Union</p>
-<p>6-4 基于size的优化</p>
-<p>6-5 基于rank的优化</p>
-<p>6-6 路径压缩 (Path Compression)</p>
-<h5 id="第7章-图的基础"><a href="#第7章-图的基础" class="headerlink" title="第7章 图的基础"></a>第7章 图的基础</h5><p>7-1 图论基础</p>
-<p>7-2 图的表示</p>
-<p>7-3 相邻结点迭代器</p>
-<p>7-4 图的算法框架</p>
-<p>7-5 深度优先遍历和联通分量</p>
-<p>7-6 寻路</p>
-<p>7-7 广度优先遍历和最短路径</p>
-<p>7-8 迷宫生成，PS抠图——更多无权图的应用</p>
-<h5 id="第8章-最小生成树"><a href="#第8章-最小生成树" class="headerlink" title="第8章 最小生成树"></a>第8章 最小生成树</h5><p>8-1 有权图</p>
-<p>8-2 最小生成树问题和切分定理</p>
-<p>8-3 Prim算法的第一个实现 （Lazy Prim）</p>
-<p>8-4 Prim算法的优化</p>
-<p>8-5 优化后的Prim算法的实现</p>
-<p>8-6 Krusk算法</p>
-<p>8-7 最小生成树算法的思考</p>
-<h5 id="第9章-最短路径"><a href="#第9章-最短路径" class="headerlink" title="第9章 最短路径"></a>第9章 最短路径</h5><p>9-1 最短路径问题和松弛操作（Relaxation）</p>
-<p>9-2 Dijkstra算法的思想</p>
-<p>9-3 实现Dijkstra算法</p>
-<p>9-4 负权边和Bellman-Ford算法</p>
-<p>9-5 实现Bellman-Ford算法</p>
-<p>9-6 更多和最短路径相关的思考</p>
-<h5 id="第10章-结束语"><a href="#第10章-结束语" class="headerlink" title="第10章 结束语"></a>第10章 结束语</h5><p>10-1 总结，算法思想，大家加油</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222133335548?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222133506411?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222133613856?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222133533661?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法系列教程/">算法系列教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-高性能可扩展MySQL数据库设计及架构优化 电商项目" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-高性能可扩展MySQL数据库设计及架构优化 电商项目/" class="article-date">
-      <time datetime="2018-02-22T04:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-高性能可扩展MySQL数据库设计及架构优化 电商项目/">高性能可扩展MySQL数据库设计及架构优化 电商项目</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>教程详情地址：<a href="https://coding.imooc.com/class/79.html" target="_blank" rel="noopener">https://coding.imooc.com/class/79.html</a><br><img src="http://img.blog.csdn.net/20180222112741441?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222112749488?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-数据库开发规范的制定"><a href="#第1章-数据库开发规范的制定" class="headerlink" title="第1章 数据库开发规范的制定"></a>第1章 数据库开发规范的制定</h5><p>1-1 课程说明</p>
-<p>1-2 课程准备</p>
-<p>1-3 电商项目简介</p>
-<p>1-4 数据库设计规范简介</p>
-<p>1-5 数据库命名规范</p>
-<p>1-6 数据库基础设计规范</p>
-<p>1-7 数据库索引设计规范</p>
-<p>1-8 数据库字段设计规范</p>
-<p>1-9 SQL开发规范</p>
-<p>1-10 数据库操作规范</p>
-<h5 id="第2章-电商实例数据库结构设计"><a href="#第2章-电商实例数据库结构设计" class="headerlink" title="第2章 电商实例数据库结构设计"></a>第2章 电商实例数据库结构设计</h5><p>2-1 电商项目用户模块</p>
-<p>2-2 Hash分区表</p>
-<p>2-3 Range分区</p>
-<p>2-4 List分区</p>
-<p>2-5 项目分区表演示</p>
-<p>2-6 商品模块</p>
-<p>2-7 订单模块</p>
-<p>2-8 DB规划</p>
-<h5 id="第3章-MySQL执行计划（explain）分析"><a href="#第3章-MySQL执行计划（explain）分析" class="headerlink" title="第3章 MySQL执行计划（explain）分析"></a>第3章 MySQL执行计划（explain）分析</h5><p>3-1 常见业务处理</p>
-<p>3-2 执行计划分析</p>
-<p>3-3 如何优化分页查询示例</p>
-<p>3-4 如何删除重复数据示例</p>
-<p>3-5 如何进行分区间数据统计示例</p>
-<p>3-6 捕获有问题的SQL-慢查日志</p>
-<h5 id="第4章-MySQL数据库备份和恢复"><a href="#第4章-MySQL数据库备份和恢复" class="headerlink" title="第4章 MySQL数据库备份和恢复"></a>第4章 MySQL数据库备份和恢复</h5><p>4-1 数据库备份</p>
-<p>4-2 mysqldump全备介绍</p>
-<p>4-3 mysqldump全备单库实例</p>
-<p>4-4 mysqldump全备所有库和所有表实例</p>
-<p>4-5 mysqldump全备Where及脚本备份</p>
-<p>4-6 mysqldump恢复</p>
-<p>4-7 mysqldump恢复实例</p>
-<p>4-8 mysqldump恢复单表实例</p>
-<p>4-9 指定时点的恢复</p>
-<p>4-10 指定时点的Binlog恢复</p>
-<p>4-11 实时binlog备份</p>
-<p>4-12 xtrabackup备份和恢复</p>
-<p>4-13 Mysql备份计划</p>
-<h5 id="第5章-高性能高可用MySQL架构变迁"><a href="#第5章-高性能高可用MySQL架构变迁" class="headerlink" title="第5章 高性能高可用MySQL架构变迁"></a>第5章 高性能高可用MySQL架构变迁</h5><p>5-1 mysql主从复制配置</p>
-<p>5-2 mysql主从复制演示</p>
-<p>5-3 基于GTID的复制链路</p>
-<p>5-4 高可用keepalived实例</p>
-<p>5-5 Mysql数据库读写分离</p>
-<p>5-6 使用LVS解决读负载均衡</p>
-<p>5-7 使用maxscale数据库中间件解决读负载均衡</p>
-<p>5-8 使用DB业务拆分解决写压力大问题</p>
-<p>5-9 课程总结和思考</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222112922317?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022211293139?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222112938507?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><img src="http://img.blog.csdn.net/20180222112951795?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/mysql课程系列/">mysql课程系列</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-看的见的算法 7个经典应用诠释算法精髓" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-看的见的算法 7个经典应用诠释算法精髓/" class="article-date">
-      <time datetime="2018-02-22T03:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-看的见的算法 7个经典应用诠释算法精髓/">看的见的算法 7个经典应用诠释算法精髓</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/138.html" target="_blank" rel="noopener">https://coding.imooc.com/class/138.html</a></p>
-<p><img src="http://img.blog.csdn.net/20180222023108754?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022202311849?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-欢迎来到看得见的算法"><a href="#第1章-欢迎来到看得见的算法" class="headerlink" title="第1章 欢迎来到看得见的算法"></a>第1章 欢迎来到看得见的算法</h5><p>1-1 欢迎来到看得见的算法</p>
-<p>1-2 学习这个课程将完成什么项目？</p>
-<p>1-3 关于本课程的编程环境</p>
-<p>1-4 更多学习本课程的注意事项</p>
-<h5 id="第2章-要想看得见，先要搞定GUI编程"><a href="#第2章-要想看得见，先要搞定GUI编程" class="headerlink" title="第2章 要想看得见，先要搞定GUI编程"></a>第2章 要想看得见，先要搞定GUI编程</h5><p>2-1 使用JFrame</p>
-<p>2-2 创建属于自己的第一个JFrame子类</p>
-<p>2-3 设置画布与图形绘制基础</p>
-<p>2-4 使用Graphics2D</p>
-<p>2-5 整理绘制工具类</p>
-<p>2-6 高级绘制特性：抗锯齿和双缓存</p>
-<p>2-7 动画基础</p>
-<p>2-8 算法可视化中的MVC</p>
-<p>2-9 键盘事件</p>
-<p>2-10 鼠标事件</p>
-<p>2-11 课程所使用的GUI编程模板</p>
-<h5 id="第3章-概率模拟算法"><a href="#第3章-概率模拟算法" class="headerlink" title="第3章 概率模拟算法"></a>第3章 概率模拟算法</h5><p>3-1 一个有意思的分钱模拟问题</p>
-<p>3-2 深入随机分钱问题</p>
-<p>3-3 蒙特卡洛算法</p>
-<p>3-4 使用蒙特卡洛算法求PI值</p>
-<p>3-5 不需要可视化的蒙特卡洛模拟</p>
-<p>3-6 三门问题</p>
-<p>3-7 你一定能中奖吗？</p>
-<h5 id="第4章-排序算法可视化"><a href="#第4章-排序算法可视化" class="headerlink" title="第4章 排序算法可视化"></a>第4章 排序算法可视化</h5><p>4-1 选择排序算法可视化.</p>
-<p>4-2 为可视化添加更多效果</p>
-<p>4-3 插入排序可视化.</p>
-<p>4-4 在近乎有序的数据上测试插入排序算法.</p>
-<p>4-5 通过归并排序算法深入理解递归</p>
-<p>4-6 归并排序算法可视化.</p>
-<p>4-7 快速排序算法可视化</p>
-<p>4-8 在快速排序中随机选取标定点</p>
-<p>4-9 双路快速排序算法可视化</p>
-<p>4-10 三路快速排序算法可视化</p>
-<p>4-11 堆排序算法可视化</p>
-<h5 id="第5章-走迷宫"><a href="#第5章-走迷宫" class="headerlink" title="第5章 走迷宫"></a>第5章 走迷宫</h5><p>5-1 处理迷宫文件</p>
-<p>5-2 迷宫可视化</p>
-<p>5-3 迷宫问题和图的遍历</p>
-<p>5-4 深度优先递归走迷宫</p>
-<p>5-5 迷宫问题与回溯法</p>
-<p>5-6 非递归深度优先走迷宫</p>
-<p>5-7 非递归深度优先走迷宫求解最终路径</p>
-<p>5-8 广度优先走迷宫问题</p>
-<p>5-9 深度优先遍历和广度优先遍历的内在联系</p>
-<h5 id="第6章-随机迷宫生成"><a href="#第6章-随机迷宫生成" class="headerlink" title="第6章 随机迷宫生成"></a>第6章 随机迷宫生成</h5><p>6-1 什么是迷宫</p>
-<p>6-2 生成迷宫基础</p>
-<p>6-3 深度优先遍历生成迷宫</p>
-<p>6-4 非递归深度优先遍历生成迷宫</p>
-<p>6-5 广度优先遍历生成迷宫</p>
-<p>6-6 随机队列生成迷宫</p>
-<p>6-7 迷宫生成的迷雾效果</p>
-<p>6-8 生成随机性更强的迷宫</p>
-<p>6-9 更多迷宫问题</p>
-<h5 id="第7章-自己做一个扫雷游戏"><a href="#第7章-自己做一个扫雷游戏" class="headerlink" title="第7章 自己做一个扫雷游戏"></a>第7章 自己做一个扫雷游戏</h5><p>7-1 扫雷是什么鬼？扫雷里包含什么算法？</p>
-<p>7-2 扫雷代码基础</p>
-<p>7-3 随机生成雷区</p>
-<p>7-4 验证随机生成雷区算法的随机性</p>
-<p>7-5 Fisher-Yates洗牌算法的应用</p>
-<p>7-6 为扫雷程序加入交互</p>
-<p>7-7 扫雷与floodfill算法</p>
-<p>7-8 更多扫雷相关和floodfill算法的应用</p>
-<h5 id="第8章-益智游戏自动生成解-Move-the-Box"><a href="#第8章-益智游戏自动生成解-Move-the-Box" class="headerlink" title="第8章 益智游戏自动生成解 - Move the Box"></a>第8章 益智游戏自动生成解 - Move the Box</h5><p>8-1 玩一玩Move the Box</p>
-<p>8-2 求解Move the Box的数据架构</p>
-<p>8-3 求解Move the Box的渲染</p>
-<p>8-4 搜索框架</p>
-<p>8-5 处理箱子掉落过程</p>
-<p>8-6 处理箱子消除过程</p>
-<p>8-7 显示问题的解</p>
-<p>8-8 更多搜索优化思路</p>
-<p>8-9 更多人工智能相关</p>
-<h5 id="第9章-分形图的绘制：计算机生成艺术"><a href="#第9章-分形图的绘制：计算机生成艺术" class="headerlink" title="第9章 分形图的绘制：计算机生成艺术"></a>第9章 分形图的绘制：计算机生成艺术</h5><p>9-1 分形到底是什么鬼</p>
-<p>9-2 递归绘制基础</p>
-<p>9-3 Vicsek 分形图的绘制</p>
-<p>9-4 为分形绘制添加交互</p>
-<p>9-5 Sierpinski 分形绘制</p>
-<p>9-6 Sierpinski 三角形</p>
-<p>9-7 Koch雪花分形背后的数学分析</p>
-<p>9-8 编写Koch雪花分形</p>
-<p>9-9 利用分形绘制树</p>
-<h5 id="第10章-看得见的算法，下季再见！"><a href="#第10章-看得见的算法，下季再见！" class="headerlink" title="第10章 看得见的算法，下季再见！"></a>第10章 看得见的算法，下季再见！</h5><p>10-1 看得见的算法，下一季再见！</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222023303691?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222023312293?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222023320599?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222023328162?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法系列教程/">算法系列教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-让你页面速度飞起来 Web前端性能优化" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-让你页面速度飞起来 Web前端性能优化/" class="article-date">
-      <time datetime="2018-02-22T02:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-让你页面速度飞起来 Web前端性能优化/">让你页面速度飞起来 Web前端性能优化</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/130.html" target="_blank" rel="noopener">https://coding.imooc.com/class/130.html</a><br><img src="http://img.blog.csdn.net/20180222021953854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222022001545?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><h5 id="第1章-课程简介"><a href="#第1章-课程简介" class="headerlink" title="第1章 课程简介"></a>第1章 课程简介</h5><p>1-1 课程简介</p>
-<h5 id="第2章-资源合并与压缩"><a href="#第2章-资源合并与压缩" class="headerlink" title="第2章 资源合并与压缩"></a>第2章 资源合并与压缩</h5><p>2-1 资源合并与压缩-http 清求的过程及潜在的性能优化点</p>
-<p>2-2 资源合并与压缩-html 压缩</p>
-<p>2-3 资源合并与压缩-css 及 js压缩</p>
-<p>2-4 资源合并与压缩-文件合并</p>
-<p>2-5 资源合并与压缩-实战-在线工具压缩</p>
-<p>2-6 资源合并与压缩-实战-fis3 构建工具自动压缩合并-流程</p>
-<p>2-7 资源合并与压缩-实战-fis3 构建工具自动压缩合并-实操</p>
-<p>2-8 资源合并与压缩-总结</p>
-<h5 id="第3章-图片相关的优化"><a href="#第3章-图片相关的优化" class="headerlink" title="第3章 图片相关的优化"></a>第3章 图片相关的优化</h5><p>3-1 图片相关的优化- 一张JPG图片的解析过程</p>
-<p>3-2 图片相关的优化- png8、png24、png32之间的区别</p>
-<p>3-3 图片相关的优化- 不同格式图片常用的业务场景</p>
-<p>3-4 图片相关的优化- 图片压缩几种方法-雪碧图、Image inline</p>
-<p>3-5 图片相关的优化- 图片压缩案例分析</p>
-<p>3-6 图片相关的优化- 图片压缩实战（上） webp、inline-image</p>
-<p>3-7 图片相关的优化- 图片压缩实战（下）雪碧图、svg</p>
-<h5 id="第4章-css-和-js-的装载与执行"><a href="#第4章-css-和-js-的装载与执行" class="headerlink" title="第4章 css 和 js 的装载与执行"></a>第4章 css 和 js 的装载与执行</h5><p>4-1 css和js的装载与执行-HTML 页面加载渲染的过程</p>
-<p>4-2 css和js的装载与执行-HTML 演染过程的一些特点</p>
-<p>4-3 css和js的装载与执行-顺序执行、并发加载</p>
-<p>4-4 css和js的装载与执行-css 阻塞和 js 阻塞</p>
-<p>4-5 css和js的装载与执行-依赖关系、js引入的方式</p>
-<p>4-6 css和js的装载与执行-加载和执行的一些优化点</p>
-<p>4-7 css和js的装载与执行-实战-验证对于某个域名浏览器并发数是有上限的</p>
-<p>4-8 css和js的装载与执行-实战-验证css加载不会阻塞后面的 js 并发加载</p>
-<p>4-9 css和js的装载与执行-实战-async、defter</p>
-<p>4-10 css和js的装载与执行-实战-动态异步引入js实操</p>
-<p>4-11 css和js的装载与执行-实战-@import、link实操</p>
-<p>4-12 css和js的装载与执行-实战-手机淘宝加载分析</p>
-<h5 id="第5章-懒加载与预加载"><a href="#第5章-懒加载与预加载" class="headerlink" title="第5章 懒加载与预加载"></a>第5章 懒加载与预加载</h5><p>5-1 懒加载与预加载-懒加载原理</p>
-<p>5-2 懒加载与预加载-预加载原理</p>
-<p>5-3 懒加载与预加载-懒加载、预加载使用场景</p>
-<p>5-4 懒加载与预加载-懒加载原生 js 和 zepto.lazyload</p>
-<p>5-5 懒加载与预加载-预加载原生 js 和 PreloadJS 实现</p>
-<h5 id="第6章-重绘与回流"><a href="#第6章-重绘与回流" class="headerlink" title="第6章 重绘与回流"></a>第6章 重绘与回流</h5><p>6-1 重绘与回流-css 性能让 Javacript 变慢？</p>
-<p>6-2 重绘与回流-什么是重绘与回流</p>
-<p>6-3 重绘与回流-避免重绘回流的两种方法</p>
-<p>6-4 重绘与回流-案例解析-重绘、回流及图层</p>
-<p>6-5 重绘与回流-案例解析- chrome 浏览器自动创建图层 layer</p>
-<p>6-6 重绘与回流- 实战优化点总结</p>
-<p>6-7 重绘与回流- 实战演练 1</p>
-<p>6-8 重绘与回流- 实战演练 2</p>
-<p>6-9 重绘与回流- 实战演练 3</p>
-<p>6-10 重绘与回流- 实战演练 4</p>
-<p>6-11 重绘与回流- 实战演练 5</p>
-<p>6-12 重绘与回流- 实战演练 6</p>
-<p>6-13 重绘与回流- 实战演练 7</p>
-<p>6-14 重绘与回流- 实战演练 8 ,9</p>
-<h5 id="第7章-浏览器存储"><a href="#第7章-浏览器存储" class="headerlink" title="第7章 浏览器存储"></a>第7章 浏览器存储</h5><p>7-1 浏览器存储-cookies</p>
-<p>7-2 浏览器存储-LocalStorage、SessionStorage</p>
-<p>7-3 浏览器存储-IndexedDB</p>
-<p>7-4 浏览器存储-案例解析</p>
-<p>7-5 浏览器存储-Service Workers产生的意义</p>
-<p>7-6 浏览器存储-PWA与Service Workers</p>
-<p>7-7 浏览器存储-案例解析</p>
-<p>7-8 浏览器存储-实战演练-cookie、localstorge、sessionStorge</p>
-<p>7-9 浏览器存储-IndexeDB-基础操作-创建打开、关闭删除</p>
-<p>7-10 浏览器存储-IndexeDB-基础操作</p>
-<p>7-11 浏览器存储-IndexeDB-事务</p>
-<p>7-12 浏览器存储-Service Workers-离线应用</p>
-<p>7-13 浏览器存储-Service Workers-如何实现Service Workers主页面之间的通信</p>
-<h5 id="第8章-缓存优化"><a href="#第8章-缓存优化" class="headerlink" title="第8章 缓存优化"></a>第8章 缓存优化</h5><p>8-1 缓存1</p>
-<p>8-2 缓存2</p>
-<p>8-3 缓存3-Last-Modified-If-Modified-Since</p>
-<p>8-4 缓存4-Etag-If-None-Match</p>
-<p>8-5 缓存5-案例解析</p>
-<p>8-6 缓存6-流程图</p>
-<p>8-7 缓存7-实战1</p>
-<p>8-8 缓存8-实战2</p>
-<h5 id="第9章-SSR（服务端渲染）"><a href="#第9章-SSR（服务端渲染）" class="headerlink" title="第9章 SSR（服务端渲染）"></a>第9章 SSR（服务端渲染）</h5><p>9-1 服务端性能优化-1</p>
-<p>9-2 服务端性能优化-2</p>
-<p>9-3 服务端性能优化-3</p>
-<h4 id="教程截图-1"><a href="#教程截图-1" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222022203503?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222022212930?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222022221320?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Web前端系列教程/">Web前端系列教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-微信小程序入门与实战 常用组件API开发技巧项目实战" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/" class="article-date">
-      <time datetime="2018-02-22T01:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/">微信小程序入门与实战 常用组件API开发技巧项目实战</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/75.html" target="_blank" rel="noopener">https://coding.imooc.com/class/75.html</a><br><img src="http://img.blog.csdn.net/20180221211225932?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211234400?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-什么是微信小程序？"><a href="#第1章-什么是微信小程序？" class="headerlink" title="第1章 什么是微信小程序？"></a>第1章 什么是微信小程序？</h5><p>1-1 序：十几个小时的课程就这节最重要</p>
-<p>1-2 开篇及课程特色介绍</p>
-<p>1-3 直观感受一下微信小程序</p>
-<p>1-4 小程序适合做什么样的应用</p>
-<p>1-5 对开发者的影响</p>
-<p>1-6 学习基础</p>
-<p>1-7 小作业</p>
-<h5 id="第2章-小程序环境搭建与开发工具介绍"><a href="#第2章-小程序环境搭建与开发工具介绍" class="headerlink" title="第2章 小程序环境搭建与开发工具介绍"></a>第2章 小程序环境搭建与开发工具介绍</h5><p>2-1 开篇介绍及下载工具</p>
-<p>2-2 小程序目前情况及限制</p>
-<p>2-3 小程序开发工具介绍-</p>
-<h5 id="第3章-从一个简单的“欢迎“页面开始小程序之旅"><a href="#第3章-从一个简单的“欢迎“页面开始小程序之旅" class="headerlink" title="第3章 从一个简单的“欢迎“页面开始小程序之旅"></a>第3章 从一个简单的“欢迎“页面开始小程序之旅</h5><p>3-1 本章内容简介</p>
-<p>3-2 官方种子项目介绍与小程序的文件结构</p>
-<p>3-3 新建我们自己的项目：ReaderMovie</p>
-<p>3-4 开始制作项目启动页（如果出现错误，请参考 3-10 扩展）</p>
-<p>3-5 制作项目启动页（上）之自适应单位：RPX</p>
-<p>3-6 制作项目启动页（中）之样式与弹性盒子模型</p>
-<p>3-7 制作项目启动页（下）之小程序app.json基础配置</p>
-<p>3-8 章节扩展（可选观看1）移动端分辨率精讲</p>
-<p>3-9 章节扩展（可选观看2）小程序的自适应单位RPX精讲</p>
-<p>3-10 章节扩展（可选观看3）container样式无效或提示未正确调用Page的同学看这里</p>
-<h5 id="第4章-第二个页面：新闻阅读列表"><a href="#第4章-第二个页面：新闻阅读列表" class="headerlink" title="第4章 第二个页面：新闻阅读列表"></a>第4章 第二个页面：新闻阅读列表</h5><p>4-1 第四章课程简介</p>
-<p>4-2 真机运行小程序及小程序开发者后台简介</p>
-<p>4-3 使用Swiper组件构建轮播图</p>
-<p>4-4 构建新闻列表（上）</p>
-<p>4-5 构建新闻列表（下）</p>
-<p>4-6 js文件结构与Page页面的生命周期</p>
-<p>4-7 基础</p>
-<p>4-8 扩展</p>
-<p>4-9 使用列表渲染wx-for改写新闻列表</p>
-<p>4-10 小程序的事件机制（冒泡与非冒泡）上</p>
-<p>4-11 小程序的事件机制（冒泡与非冒泡）下</p>
-<h5 id="第5章-小程序的模板化与模块化"><a href="#第5章-小程序的模板化与模块化" class="headerlink" title="第5章 小程序的模板化与模块化"></a>第5章 小程序的模板化与模块化</h5><p>5-1 将业务中的数据分离到单独的数据文件中</p>
-<p>5-2 使用require方法加载js模块儿文件</p>
-<p>5-3 template模板的使用</p>
-<h5 id="第6章-构建新闻详情页面"><a href="#第6章-构建新闻详情页面" class="headerlink" title="第6章 构建新闻详情页面"></a>第6章 构建新闻详情页面</h5><p>6-1 从文章列表跳转到新闻详情页面（组件自定义属性及获取属性）</p>
-<p>6-2 先静后动，构建新闻详情页面样式</p>
-<p>6-3 配置全局导航栏颜色</p>
-<p>6-4 使用数据填充新闻详情页面</p>
-<p>6-5 缓存Storage的基本用法</p>
-<p>6-6 使用缓存实现文章收藏功能</p>
-<p>6-7 交互反馈 wx.showToast</p>
-<p>6-8 操作反馈wx.showModal</p>
-<p>6-9 交互反馈wx.showActionSheet</p>
-<p>6-10 同步异步方法对比</p>
-<p>6-11 playBackgroundAudio-音乐播放基本实现</p>
-<p>6-12 加入不同的音乐，个性化音乐播放</p>
-<p>6-13 监听播放事件完善音乐播放</p>
-<p>6-14 应用程序生命周期</p>
-<p>6-15 继续完善音乐播放</p>
-<p>6-16 音乐播放最终章</p>
-<p>6-17 真机如何清除缓存与template内路径问题</p>
-<h5 id="第7章-开始制作电影资讯页面"><a href="#第7章-开始制作电影资讯页面" class="headerlink" title="第7章 开始制作电影资讯页面"></a>第7章 开始制作电影资讯页面</h5><p>7-1 重要补充说明（关于API调用403）</p>
-<p>7-2 Banner轮播图跳转文章详情</p>
-<p>7-3 补充内容：tab选项卡课前准备</p>
-<p>7-4 给项目加入tab选项卡</p>
-<p>7-5 完善tab选项卡</p>
-<p>7-6 补充内容：为什么redirectTo不出现选项卡</p>
-<p>7-7 电影页面嵌套template分析</p>
-<p>7-8 3个嵌套template标签的实现</p>
-<p>7-9 stars template的样式实现</p>
-<p>7-10 movie template的样式实现</p>
-<p>7-11 movie-list template的样式实现</p>
-<p>7-12 RESTful API简介及调用豆瓣API</p>
-<p>7-13 获取正在热映、即将上映和Top250的数据</p>
-<p>7-14 电影页面数据绑定（上）</p>
-<p>7-15 电影页面数据绑定（下）</p>
-<p>7-16 星星评分组件的实现</p>
-<p>7-17 更换电影分类标题</p>
-<h5 id="第8章-更多电影及电影搜索页面的实现"><a href="#第8章-更多电影及电影搜索页面的实现" class="headerlink" title="第8章 更多电影及电影搜索页面的实现"></a>第8章 更多电影及电影搜索页面的实现</h5><p>8-1 更多电影页面的编写思路与电影类型获取</p>
-<p>8-2 动态设置导航栏标题</p>
-<p>8-3 更多电影页面加载数据</p>
-<p>8-4 实现movie-grid template</p>
-<p>8-5 实现上滑加载更多数据</p>
-<p>8-6 设置loading状态</p>
-<p>8-7 实现下拉刷新数据</p>
-<p>8-8 backgroundColor 到底设置的是哪里的颜色</p>
-<h5 id="第9章-构建电影详情页面"><a href="#第9章-构建电影详情页面" class="headerlink" title="第9章 构建电影详情页面"></a>第9章 构建电影详情页面</h5><p>9-1 电影搜索页面构建（上）</p>
-<p>9-2 电影搜索页面构建（下）</p>
-<p>9-3 tabbar的图片路径不要使用绝对路径</p>
-<p>9-4 修复音乐播放完成后图标状态没有复位的bug</p>
-<p>9-5 编写电影详情页面(上）</p>
-<p>9-6 编写电影详情页面（下）</p>
-<p>9-7 图片的缩放与裁剪</p>
-<p>9-8 新版本更新后的补充章节</p>
-<p>9-9 编写电影详情页面骨架</p>
-<p>9-10 完成电影详情页面（上）</p>
-<p>9-11 完成电影详情页面 （下）</p>
-<p>9-12 小程序Q&amp;A</p>
-<h5 id="第10章-Form表单类组件与Map地图组件"><a href="#第10章-Form表单类组件与Map地图组件" class="headerlink" title="第10章 Form表单类组件与Map地图组件"></a>第10章 Form表单类组件与Map地图组件</h5><p>10-1 form之switch组件</p>
-<p>10-2 form之slider组件</p>
-<p>10-3 form之radio组件</p>
-<p>10-4 form之checkbox组件</p>
-<p>10-5 form表单提交</p>
-<p>10-6 map组件</p>
-<h5 id="第11章-扩展内容ES6在小程序中的使用与微信小程序后台账号配置"><a href="#第11章-扩展内容ES6在小程序中的使用与微信小程序后台账号配置" class="headerlink" title="第11章 扩展内容ES6在小程序中的使用与微信小程序后台账号配置"></a>第11章 扩展内容ES6在小程序中的使用与微信小程序后台账号配置</h5><p>11-1 小程序常见问题（非常重要）</p>
-<p>11-2 小程序中的ES6 Class</p>
-<p>11-3 使用Module和Class提取封装一个Movie对象</p>
-<p>11-4 箭头函数、致谢与再见</p>
-<h5 id="第12章-0-15-152900-版本重要API、功能讲解"><a href="#第12章-0-15-152900-版本重要API、功能讲解" class="headerlink" title="第12章 0.15.152900 版本重要API、功能讲解"></a>第12章 0.15.152900 版本重要API、功能讲解</h5><p>12-1 新版本重要特性总览</p>
-<p>12-2 选择用户收货地址API</p>
-<p>12-3 对login、getUserInfo等接口的改动与理解</p>
-<p>12-4 用户设置界面与动态分享详解</p>
-<p>12-5 场景值获取方式与应用举例</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180221211349657?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211357412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211406737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211416508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-buy-10小时入门大数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/02/22/buy-10小时入门大数据/" class="article-date">
-      <time datetime="2018-02-22T00:11:11.000Z" itemprop="datePublished">2018-02-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/02/22/buy-10小时入门大数据/">10小时入门大数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/128.html" target="_blank" rel="noopener">https://coding.imooc.com/class/128.html</a>   【获取方式在末尾】<br><img src="http://img.blog.csdn.net/20180221210424391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022121043528?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-大数据概述"><a href="#第1章-大数据概述" class="headerlink" title="第1章 大数据概述"></a>第1章 大数据概述</h5><p>1-1 导学</p>
-<p>1-2 章节安排_</p>
-<p>1-3 OOTB镜像文件和虚拟机的使用</p>
-<p>1-4 说两则故事说起</p>
-<p>1-5 大数据与生活息息相关</p>
-<p>1-6 大数据基本概念</p>
-<p>1-7 大数据带来的挑战</p>
-<p>1-8 如何应对大数据带来的挑战</p>
-<p>1-9 -如何学好大数据</p>
-<h5 id="第2章-初识Hadoop"><a href="#第2章-初识Hadoop" class="headerlink" title="第2章 初识Hadoop"></a>第2章 初识Hadoop</h5><p>2-1 章节安排</p>
-<p>2-2 Hadoop概述</p>
-<p>2-3 2.03-Hadoop核心组件之HDFS</p>
-<p>2-4 2.04-Hadoop核心组件之YARN</p>
-<p>2-5 2.05-Hadoop核心组件之MapReduce</p>
-<p>2-6 2.06-Hadoop优势</p>
-<p>2-7 2.07-Hadoop发展史</p>
-<p>2-8 2.08-Hadoop生态系统</p>
-<p>2-9 2.09-Hadoop常用发行版及选型</p>
-<p>2-10 2.10-Hadoop应用案例</p>
-<h5 id="第3章-分布式文件系统HDFS"><a href="#第3章-分布式文件系统HDFS" class="headerlink" title="第3章 分布式文件系统HDFS"></a>第3章 分布式文件系统HDFS</h5><p>3-1 -课程目录-</p>
-<p>3-2 -普通分布式文件系统的设计思路</p>
-<p>3-3 HDFS概述及设计目标</p>
-<p>3-4 HDFS架构</p>
-<p>3-5 HDFS副本机制</p>
-<p>3-6 HDFS副本存放策略</p>
-<p>3-7 JDK安装&amp;ssh安装&amp;ssh免密码登陆配置</p>
-<p>3-8 HDFS伪分布式环境搭建</p>
-<p>3-9 HDFS shell操作</p>
-<p>3-10 Java操作HDFS开发环境搭建</p>
-<p>3-11 Java API操作HDFS文件系统</p>
-<p>3-12 HDFS写数据流程</p>
-<p>3-13 HDFS读数据流程</p>
-<p>3-14 HDFS文件系统的优缺点</p>
-<h5 id="第4章-分布式资源调度YARN"><a href="#第4章-分布式资源调度YARN" class="headerlink" title="第4章 分布式资源调度YARN"></a>第4章 分布式资源调度YARN</h5><p>4-1 -课程目录</p>
-<p>4-2 -YARN产生背景</p>
-<p>4-3 -YARN架构</p>
-<p>4-4 -YARN执行流程</p>
-<p>4-5 -YARN环境搭建</p>
-<p>4-6 -初识提交PI的MapReduce作业到YARN上执行</p>
-<h5 id="第5章-分布式计算框架MapReduce"><a href="#第5章-分布式计算框架MapReduce" class="headerlink" title="第5章 分布式计算框架MapReduce"></a>第5章 分布式计算框架MapReduce</h5><p>5-1 -课程目录</p>
-<p>5-2 -MapReduce概述</p>
-<p>5-3 -从WordCount案例说起MapReduce编程模型</p>
-<p>5-4 -MapReduce执行流程</p>
-<p>5-5 -MapReduce核心概念</p>
-<p>5-6 -MapReduce1.x架构</p>
-<p>5-7 -MapReduce2.x架构</p>
-<p>5-8 -Java版本wordcount功能实现</p>
-<p>5-9 -Java版本wordcount功能重构</p>
-<p>5-10 -Combiner应用程序开发</p>
-<p>5-11 -Partitioner应用程序开发</p>
-<p>5-12 JobHistory使用</p>
-<h5 id="第6章-Hadoop项目实战"><a href="#第6章-Hadoop项目实战" class="headerlink" title="第6章 Hadoop项目实战"></a>第6章 Hadoop项目实战</h5><p>6-1 -课程目录–</p>
-<p>6-2 用户行为日志概述</p>
-<p>6-3 离线数据处理架构</p>
-<p>6-4 项目需求</p>
-<p>6-5 功能实现之UserAgent解析类测试</p>
-<p>6-6 功能实现之单机本地完成需求统计</p>
-<p>6-7 使用MapReduce完成需求统计</p>
-<p>6-8 功能扩展思路</p>
-<h5 id="第7章-Hadoop分布式集群搭建"><a href="#第7章-Hadoop分布式集群搭建" class="headerlink" title="第7章 Hadoop分布式集群搭建"></a>第7章 Hadoop分布式集群搭建</h5><p>7-1 -课程目录</p>
-<p>7-2 -分布式环境搭建之环境介绍</p>
-<p>7-3 -分布式环境搭建前置配置之ssh免密码登陆</p>
-<p>7-4 -分布式环境搭建前置配置之JDK安装</p>
-<p>7-5 -分布式环境搭建集群搭建之Hadoop配置及分发</p>
-<p>7-6 -分布式环境搭建Hadoop格式化及启停</p>
-<p>7-7 -分布式环境HDFS及YARN的使用</p>
-<p>7-8 -将Hadoop项目运行在Hadoop集群之上</p>
-<h5 id="第8章-Hadoop集成Spring的使用"><a href="#第8章-Hadoop集成Spring的使用" class="headerlink" title="第8章 Hadoop集成Spring的使用"></a>第8章 Hadoop集成Spring的使用</h5><p>8-1 -课程目录</p>
-<p>8-2 -Spring Hadoop概述</p>
-<p>8-3 -Spring Hadoop开发环境搭建及访问HDFS文件系统</p>
-<p>8-4 -Spring Hadoop配置文件详解</p>
-<p>8-5 -Spring Boot访问HDFS文件系统</p>
-<p>8-6 -Spring Hadoop其他</p>
-<h5 id="第9章-前沿技术拓展-Spark-Flink-Beam"><a href="#第9章-前沿技术拓展-Spark-Flink-Beam" class="headerlink" title="第9章 前沿技术拓展: Spark/Flink/Beam"></a>第9章 前沿技术拓展: Spark/Flink/Beam</h5><p>9-1 -课程目录</p>
-<p>9-2 -吐槽MapReduce</p>
-<p>9-3 -Spark特点</p>
-<p>9-4 -Spark与Hadoop深入对比</p>
-<p>9-5 -Spark开发语言及运行模式介绍</p>
-<p>9-6 -Scala&amp;Maven安装</p>
-<p>9-7 -Spark环境搭建及wordcount案例实现</p>
-<p>9-8 -Flink概述</p>
-<p>9-9 -使用Flink完成wordcount统计</p>
-<p>9-10 -Beam概述</p>
-<p>9-11 -将WordCount的Beam程序以多种不同Runner运行</p>
-<p>9-12 -课程目录</p>
-<h5 id="第10章-Hadoop3-x新特性"><a href="#第10章-Hadoop3-x新特性" class="headerlink" title="第10章 Hadoop3.x新特性"></a>第10章 Hadoop3.x新特性</h5><p>10-1 -课程目录</p>
-<p>10-2 -Hadoop3.x概述</p>
-<p>10-3 -Hadoop3.x新特性之Common改进</p>
-<p>10-4 -Hadoop3.x新特性之HDFS改进</p>
-<p>10-5 -Hadoop3.x新特性之YARN改进</p>
-<p>10-6 -Hadoop3.x新特性之MapReduce改进</p>
-<p>10-7 -Hadoop3.x新特性之其他</p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180221210513261?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>每一章的视频都是合成一个视频了<br><img src="http://img.blog.csdn.net/20180221210520204?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221210531118?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221210542315?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
 
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2018 John Doe
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
-            </div>
-        </div>
+
+        <footer class="footer">
+    <div class="top">
         
-            <div class="visit">
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>John Doe &copy; 2015 - 2018</span>
+            <span>
                 
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >极客到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
 </footer>
 
-    </div>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/page/3/&title=Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/page/3/&title=Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/page/3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/page/3/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/page/3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
 
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/page/3/" alt="微信分享二维码">
 </div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
     });
+})();
 </script>
 
 
-  </div>
+
 </body>
 </html>
