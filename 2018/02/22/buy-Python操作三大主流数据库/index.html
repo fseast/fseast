@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python操作三大主流数据库 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/114.html 第1章 数据库简介1-1 python操作三大主流数据库导学篇 1-2 数据库简介(1) 1-3 MySQL简介(1) 第2章 mysql基础2-1 mysql安装及配置(1) 2-2 mysql图形化管理工具(1) 2-3 sql语法基础-创建并使用数据库 2-4 sql语法基础-创建表 2-5">
+<meta name="keywords" content="Python实战教程系列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python操作三大主流数据库">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-Python操作三大主流数据库/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/114.html 第1章 数据库简介1-1 python操作三大主流数据库导学篇 1-2 数据库简介(1) 1-3 MySQL简介(1) 第2章 mysql基础2-1 mysql安装及配置(1) 2-2 mysql图形化管理工具(1) 2-3 sql语法基础-创建并使用数据库 2-4 sql语法基础-创建表 2-5">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222164604724?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222164650658?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222164659963?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222164707815?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222164714957?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-02-22T08:51:43.050Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python操作三大主流数据库">
+<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/114.html 第1章 数据库简介1-1 python操作三大主流数据库导学篇 1-2 数据库简介(1) 1-3 MySQL简介(1) 第2章 mysql基础2-1 mysql安装及配置(1) 2-2 mysql图形化管理工具(1) 2-3 sql语法基础-创建并使用数据库 2-4 sql语法基础-创建表 2-5">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180222164604724?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buy-Python操作三大主流数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/22/buy-Python操作三大主流数据库/" class="article-date">
+  <time datetime="2018-02-22T09:25:15.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python实战教程系列/">Python实战教程系列</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python操作三大主流数据库
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/114.html" target="_blank" rel="noopener">https://coding.imooc.com/class/114.html</a><br><img src="http://img.blog.csdn.net/20180222164604724?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222164650658?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h5 id="第1章-数据库简介"><a href="#第1章-数据库简介" class="headerlink" title="第1章 数据库简介"></a>第1章 数据库简介</h5><p>1-1 python操作三大主流数据库导学篇</p>
+<p>1-2 数据库简介(1)</p>
+<p>1-3 MySQL简介(1)</p>
+<h5 id="第2章-mysql基础"><a href="#第2章-mysql基础" class="headerlink" title="第2章 mysql基础"></a>第2章 mysql基础</h5><p>2-1 mysql安装及配置(1)</p>
+<p>2-2 mysql图形化管理工具(1)</p>
+<p>2-3 sql语法基础-创建并使用数据库</p>
+<p>2-4 sql语法基础-创建表</p>
+<p>2-5 sql语法基础-插入和查询语句</p>
+<p>2-6 sql语法基础-修改和删除数据</p>
+<p>2-7 设计新闻表</p>
+<h5 id="第3章-python-API"><a href="#第3章-python-API" class="headerlink" title="第3章 python API"></a>第3章 python API</h5><p>3-1 环境配置及依赖安装</p>
+<p>3-2 python链接mysql数据库</p>
+<p>3-3 python查询mysql数据库</p>
+<p>3-4 python更新mysql数据</p>
+<h5 id="第4章-ORM"><a href="#第4章-ORM" class="headerlink" title="第4章 ORM"></a>第4章 ORM</h5><p>4-1 ORM简介</p>
+<p>4-2 SQLAlchemy安装</p>
+<p>4-3 ORM模型介绍</p>
+<p>4-4 新建ORM模型</p>
+<p>4-5 通过ORM新增数据到数据库</p>
+<p>4-6 通过ORM查询数据</p>
+<p>4-7 通过ORM修改和删除数据</p>
+<h5 id="第5章-网易新闻实战"><a href="#第5章-网易新闻实战" class="headerlink" title="第5章 网易新闻实战"></a>第5章 网易新闻实战</h5><p>5-1 项目概述</p>
+<p>5-2 flask入门</p>
+<p>5-3 网易新闻框架搭建</p>
+<p>5-4 网易新闻前台</p>
+<p>5-5 网易新闻后台管理首页及分页</p>
+<p>5-6 网易新闻数据新增</p>
+<p>5-7 网易新闻数据修改</p>
+<p>5-8 网易新闻数据删除</p>
+<h5 id="第6章-MongoDB-数据库基础"><a href="#第6章-MongoDB-数据库基础" class="headerlink" title="第6章 MongoDB 数据库基础"></a>第6章 MongoDB 数据库基础</h5><p>6-1 mongoDb基础知识</p>
+<p>6-2 mongoDb安装和配置</p>
+<p>6-3 使用命令行操作数据库</p>
+<p>6-4 练习</p>
+<p>6-5 图形化管理工具</p>
+<h5 id="第7章-Python操作MongoDB"><a href="#第7章-Python操作MongoDB" class="headerlink" title="第7章 Python操作MongoDB"></a>第7章 Python操作MongoDB</h5><p>7-1 pymongo介绍和安装</p>
+<p>7-2 使用python连接数据库</p>
+<p>7-3 使用python新增数据到mongodb</p>
+<p>7-4 使用python查询数据</p>
+<p>7-5 使用python修改数据</p>
+<p>7-6 使用python删除数据</p>
+<h5 id="第8章-MongoDB-ODM（1）"><a href="#第8章-MongoDB-ODM（1）" class="headerlink" title="第8章 MongoDB ODM（1）"></a>第8章 MongoDB ODM（1）</h5><p>8-1 MongoEngine的安装及连接</p>
+<p>8-2 ODM模型介绍</p>
+<h5 id="第9章-MongoDB-ODM（2）"><a href="#第9章-MongoDB-ODM（2）" class="headerlink" title="第9章 MongoDB ODM（2）"></a>第9章 MongoDB ODM（2）</h5><p>9-1 通过ODM查询数据</p>
+<p>9-2 通过ODM修改和删除数据</p>
+<p>9-3 通过ODM新增数据</p>
+<h5 id="第10章-MongoDB-网易新闻实战"><a href="#第10章-MongoDB-网易新闻实战" class="headerlink" title="第10章 MongoDB 网易新闻实战"></a>第10章 MongoDB 网易新闻实战</h5><p>10-1 实战项目简介及依赖安装</p>
+<p>10-2 新闻前台</p>
+<p>10-3 新闻后台首页及分页</p>
+<p>10-4 新闻数据的新增</p>
+<p>10-5 新闻数据的修改</p>
+<p>10-6 新闻数据的删除</p>
+<h5 id="第11章-Redis数据库基础"><a href="#第11章-Redis数据库基础" class="headerlink" title="第11章 Redis数据库基础"></a>第11章 Redis数据库基础</h5><p>11-1 Redis介绍</p>
+<p>11-2 -Redis的安装</p>
+<p>11-3 -Sting类型相关操作</p>
+<p>11-4 -List 类型数据相关操作</p>
+<p>11-5 -Set类型相关操作</p>
+<p>11-6 -Hash类型相关操作</p>
+<p>11-7 -图形化管理工具</p>
+<h5 id="第12章-python操作redis"><a href="#第12章-python操作redis" class="headerlink" title="第12章 python操作redis"></a>第12章 python操作redis</h5><p>12-1 redis-py的安装和连接</p>
+<p>12-2 Python操作String类型相关命令</p>
+<p>12-3 Python操作List类型相关命令</p>
+<p>12-4 Python操作Set类型相关命令</p>
+<p>12-5 Python操作Hash类型相关命令</p>
+<h5 id="第13章-python操作resis网易新闻实战"><a href="#第13章-python操作resis网易新闻实战" class="headerlink" title="第13章 python操作resis网易新闻实战"></a>第13章 python操作resis网易新闻实战</h5><p>13-1 实战项目介绍及分析</p>
+<p>13-2 实现新闻数据的新增</p>
+<p>13-3 新闻数据新增事务支持</p>
+<p>13-4 新闻数据首页</p>
+<p>13-5 新闻类别页和详情页</p>
+<p>13-6 后台首页及分页</p>
+<p>13-7 新闻数据的修改</p>
+<p>13-8 新闻数据的删除</p>
+<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222164659963?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222164707815?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222164714957?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/22/buy-Python操作三大主流数据库/" data-id="cjdzo4crl000o7oulk5d3m7vw" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/22/buy-Python3数据科学入门与实战/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          Python3数据科学入门与实战
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/22/buy-Python接口测试框架实战与自动化进阶/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Python接口测试框架实战与自动化进阶</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python实战教程系列/">Python实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java面试系列教程/">java面试系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java面试系列教程/">java面试系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/23/善东/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-6小时 jQuery开发一个前端应用/">6小时 jQuery开发一个前端应用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Laravel 快速开发简书/">Laravel 快速开发简书</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Python3数据科学入门与实战/">Python3数据科学入门与实战</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

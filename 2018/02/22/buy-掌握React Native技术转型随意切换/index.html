@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>掌握React Native技术转型随意切换 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/56.html 第1章 课程预热1-1 React 与 React Native 1-2 为何选择 React Native 1-3 RN 适合你么 第2章 初识 React Native2-1 本地环境搭建 2-2 忍不住尝尝鲜 2-3 了解 RN 项目代码结构 第3章 RN 入门知识学习3-1 如何选择 RN">
+<meta name="keywords" content="Web前端系列教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掌握React Native技术转型随意切换">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-掌握React Native技术转型随意切换/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/56.html 第1章 课程预热1-1 React 与 React Native 1-2 为何选择 React Native 1-3 RN 适合你么 第2章 初识 React Native2-1 本地环境搭建 2-2 忍不住尝尝鲜 2-3 了解 RN 项目代码结构 第3章 RN 入门知识学习3-1 如何选择 RN">
+<meta property="og:image" content="http://img.blog.csdn.net/2018022216082374?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160833427?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/2018022216084169?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160849380?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160857455?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160904599?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-02-22T08:14:51.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="掌握React Native技术转型随意切换">
+<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/56.html 第1章 课程预热1-1 React 与 React Native 1-2 为何选择 React Native 1-3 RN 适合你么 第2章 初识 React Native2-1 本地环境搭建 2-2 忍不住尝尝鲜 2-3 了解 RN 项目代码结构 第3章 RN 入门知识学习3-1 如何选择 RN">
+<meta name="twitter:image" content="http://img.blog.csdn.net/2018022216082374?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buy-掌握React Native技术转型随意切换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/22/buy-掌握React Native技术转型随意切换/" class="article-date">
+  <time datetime="2018-02-22T08:55:11.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web前端系列教程/">Web前端系列教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      掌握React Native技术转型随意切换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/56.html" target="_blank" rel="noopener">https://coding.imooc.com/class/56.html</a><br><img src="http://img.blog.csdn.net/2018022216082374?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160833427?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h5 id="第1章-课程预热"><a href="#第1章-课程预热" class="headerlink" title="第1章 课程预热"></a>第1章 课程预热</h5><p>1-1 React 与 React Native</p>
+<p>1-2 为何选择 React Native</p>
+<p>1-3 RN 适合你么</p>
+<h5 id="第2章-初识-React-Native"><a href="#第2章-初识-React-Native" class="headerlink" title="第2章 初识 React Native"></a>第2章 初识 React Native</h5><p>2-1 本地环境搭建</p>
+<p>2-2 忍不住尝尝鲜</p>
+<p>2-3 了解 RN 项目代码结构</p>
+<h5 id="第3章-RN-入门知识学习"><a href="#第3章-RN-入门知识学习" class="headerlink" title="第3章 RN 入门知识学习"></a>第3章 RN 入门知识学习</h5><p>3-1 如何选择 RN 版本</p>
+<p>3-2 React 的组件生命周期</p>
+<p>3-3 父子组件撕逼大战</p>
+<p>3-4 ES6 与 ES5 两种组件形态</p>
+<h5 id="第4章-升级-React-Native-重要补录"><a href="#第4章-升级-React-Native-重要补录" class="headerlink" title="第4章 升级 React Native 重要补录"></a>第4章 升级 React Native 重要补录</h5><p>4-1 升级 React Native 之重要补录 1-一期答疑总结</p>
+<p>4-2 升级 React Native 之重要补录 2-Run 起来课程源代码</p>
+<p>4-3 升级 React Native 之重要补录 3-暴力升级到 0.36 新手必看（上）</p>
+<p>4-4 升级 React Native 之重要补录 3-暴力升级到 0.36 新手必看（下）</p>
+<p>4-5 升级 React Native 之重要补录 4-课程进阶拥抱 ES6 新手必看（上）</p>
+<p>4-6 升级 React Native 之重要补录 4-课程进阶拥抱 ES6 新手必看（下）</p>
+<h5 id="第5章-项目初始准备"><a href="#第5章-项目初始准备" class="headerlink" title="第5章 项目初始准备"></a>第5章 项目初始准备</h5><p>5-1 狗狗说 App 功能介绍</p>
+<p>5-2 TabBarIOS 开启 App 首页（1）</p>
+<p>5-3 TabBarIOS 开启 App 首页（2）</p>
+<p>5-4 App流程结构及开发计划</p>
+<p>5-5 飞速创建后台和 Mock 假数据（1）</p>
+<p>5-6 飞速创建后台和 Mock 假数据（2）</p>
+<h5 id="第6章-开发视频配音页面"><a href="#第6章-开发视频配音页面" class="headerlink" title="第6章 开发视频配音页面"></a>第6章 开发视频配音页面</h5><p>6-1 视频列表页挖坑开发（1）</p>
+<p>6-2 视频列表页挖坑开发（2）</p>
+<p>6-3 RN 的异步请求与封装</p>
+<p>6-4 列表页上滑预加载和下拉刷新效果（1）</p>
+<p>6-5 列表页上滑预加载和下拉刷新效果（2）</p>
+<p>6-6 iOS 屏幕尺寸及分辨率知识点解析</p>
+<p>6-7 列表页点赞功能</p>
+<p>6-8 RN 导航器 Navigator 的用法</p>
+<p>6-9 详情页视频播放控制</p>
+<p>6-10 详情页视频播放控制loading-进度条-重播功能</p>
+<p>6-11 详情页视频播放控制–暂停、播放控制</p>
+<p>6-12 详情页视频播放控制–容错处理、返回导航</p>
+<p>6-13 详情页视频信息补全</p>
+<p>6-14 获取视频评论列表（1）</p>
+<p>6-15 获取视频评论列表（2）</p>
+<p>6-16 RN 里面提交评论表单（1）</p>
+<p>6-17 RN 里面提交评论表单（2）</p>
+<h5 id="第7章-RN-知识进阶串讲"><a href="#第7章-RN-知识进阶串讲" class="headerlink" title="第7章 RN 知识进阶串讲"></a>第7章 RN 知识进阶串讲</h5><p>7-1 React 与 MVC</p>
+<p>7-2 RN 的 30+组件</p>
+<p>7-3 Flexbox 弹性布局的魔法属性（1）</p>
+<p>7-4 Flexbox 弹性布局的魔法属性（2）</p>
+<p>7-5 如何甄选第三方组件</p>
+<p>7-6 RN 的 AsyncStorage 异步存储</p>
+<p>7-7 如何在手机上安装演示 RN 原型项目</p>
+<h5 id="第8章-App-内注册登录"><a href="#第8章-App-内注册登录" class="headerlink" title="第8章 App 内注册登录"></a>第8章 App 内注册登录</h5><p>8-1 伪造 Rap 注册登录接口</p>
+<p>8-2 实现注册登录页面1（输入验证码）</p>
+<p>8-3 实现注册登录页面2（倒记时）</p>
+<p>8-4 本地管理应用登录状态</p>
+<h5 id="第9章-用户账户页面"><a href="#第9章-用户账户页面" class="headerlink" title="第9章 用户账户页面"></a>第9章 用户账户页面</h5><p>9-1 头像展示与相册选取（1）</p>
+<p>9-2 头像展示与相册选取（2）</p>
+<p>9-3 头像展示与相册选取（3）</p>
+<p>9-4 XHR 异步上传图片到 cloudinary 图床（1）</p>
+<p>9-5 XHR 异步上传图片到 cloudinary 图床（2）</p>
+<p>9-6 饼状图显示图片上传进度（1）</p>
+<p>9-7 饼状图显示图片上传进度（2）</p>
+<p>9-8 编辑和保存用户资料（1）</p>
+<p>9-9 编辑和保存用户资料（2）</p>
+<h5 id="第10章-用-Koa-开发本地-API-后台"><a href="#第10章-用-Koa-开发本地-API-后台" class="headerlink" title="第10章 用 Koa 开发本地 API 后台"></a>第10章 用 Koa 开发本地 API 后台</h5><p>10-1 本地安装 Mongodb 数据库</p>
+<p>10-2 搭建 Koa 初始项目架构</p>
+<p>10-3 Koa 中配置使用 Mongodb 数据库（1）</p>
+<p>10-4 Koa 中配置使用 Mongodb 数据库（2）</p>
+<p>10-5 用螺丝帽在 Koa 中发送短信（1）</p>
+<p>10-6 用螺丝帽在 Koa 中发送短信（2）</p>
+<p>10-7 用 DHC 插件快速测试本地 API 服务</p>
+<p>10-8 服务器端实现图床签名接口</p>
+<p>10-9 用七牛上传图片资源（1）</p>
+<p>10-10 用七牛上传图片资源（2）</p>
+<h5 id="第11章-开发视频配音页面"><a href="#第11章-开发视频配音页面" class="headerlink" title="第11章 开发视频配音页面"></a>第11章 开发视频配音页面</h5><p>11-1 视频选择器与视频预览（1）</p>
+<p>11-2 视频选择器与视频预览（2）</p>
+<p>11-3 用七牛上传视频资源（1）</p>
+<p>11-4 用七牛上传视频资源（2）</p>
+<p>11-5 服务器端存储视频信息（1）</p>
+<p>11-6 服务器端存储视频信息（2）</p>
+<p>11-7 控制录音倒计时</p>
+<p>11-8 实现视频录音功能（1）</p>
+<p>11-9 实现视频录音功能（2）</p>
+<p>11-10 上传音频到云空间（1）</p>
+<p>11-11 上传音频到云空间（2）</p>
+<p>11-12 服务器端存储音频数据</p>
+<p>11-13 合并音频视频并同步封面图到七牛（1）</p>
+<p>11-14 合并音频视频并同步封面图到七牛（2）</p>
+<p>11-15 发布整个视频音频创意（1）</p>
+<p>11-16 发布整个视频音频创意（2）</p>
+<p>11-17 服务器端保存视频创意</p>
+<p>11-18 视频列表页对接后台数据</p>
+<p>11-19 完善评论和点赞后台</p>
+<h5 id="第12章-App-上线准备工作"><a href="#第12章-App-上线准备工作" class="headerlink" title="第12章 App 上线准备工作"></a>第12章 App 上线准备工作</h5><p>12-1 制作导出 App 各尺寸图标</p>
+<p>12-2 配置启动过渡画面和 App 名字</p>
+<p>12-3 为 App 开发轮播图功能</p>
+<p>12-4 打包 App 安装文件并借助蒲公英分发测试</p>
+<p>12-5 利用蒲公英做 BUG 探索测试</p>
+<h5 id="第13章-二期课程–初识-Redux-框架"><a href="#第13章-二期课程–初识-Redux-框架" class="headerlink" title="第13章 二期课程–初识 Redux 框架"></a>第13章 二期课程–初识 Redux 框架</h5><p>13-1 先了解下 Immutable Data</p>
+<p>13-2 React 蛋疼的数据通信</p>
+<p>13-3 理解 Redux 的工作原理和基本用法</p>
+<h5 id="第14章-二期课程–React-Native-升级到-0-42-3"><a href="#第14章-二期课程–React-Native-升级到-0-42-3" class="headerlink" title="第14章 二期课程–React Native 升级到 0.42.3"></a>第14章 二期课程–React Native 升级到 0.42.3</h5><p>14-1 获取 1 期源码进行升级降级</p>
+<p>14-2 依赖模块升级与 Link</p>
+<p>14-3 重新划分项目目录结构</p>
+<p>14-4 利用 Redux 组装 store</p>
+<p>14-5 重构主控页面引入 connect 连接组件</p>
+<p>14-6 dispatch 异步请求控制 App 加载次序</p>
+<p>14-7 引入 React Navigation 解决导航及嵌套路由跳转</p>
+<p>14-8 抽象列表页容器组件重构数据流</p>
+<p>14-9 完善列表页功能成功运行 Redux 集成效果</p>
+<p>14-10 重构详情页进行代码减肥</p>
+<p>14-11 抽象主要页面的容器组件</p>
+<p>14-12 实现评论与详情页的跳转和数据更新</p>
+<p>14-13 重新配置注册登录的数据状态同步</p>
+<p>14-14 抽离信息提示组件状态到全局完善评论</p>
+<p>14-15 抽象升级配音页面及导航容器</p>
+<p>14-16 重新组织账户页面</p>
+<p>14-17 升级账户更新页同步新数据</p>
+<h5 id="第15章-二期课程–兼容开发-Android-App"><a href="#第15章-二期课程–兼容开发-Android-App" class="headerlink" title="第15章 二期课程–兼容开发 Android App"></a>第15章 二期课程–兼容开发 Android App</h5><p>15-1 配置 Android 本地开发环境</p>
+<p>15-2 第一次尝试运行 Android RN 项目</p>
+<p>15-3 兼容 Android 平台样式</p>
+<p>15-4 兼容 Android 录制功能</p>
+<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/2018022216084169?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160849380?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160857455?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160904599?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/22/buy-掌握React Native技术转型随意切换/" data-id="cjdzo4csh001y7oul6s6adlg1" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/22/buy-响应式开发一招致胜/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          响应式开发一招致胜
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/22/buy-双平台真实开发GitHub App React Native技术全面掌握/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">双平台真实开发GitHub App React Native技术全面掌握</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python实战教程系列/">Python实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java面试系列教程/">java面试系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java面试系列教程/">java面试系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/23/善东/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-6小时 jQuery开发一个前端应用/">6小时 jQuery开发一个前端应用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Laravel 快速开发简书/">Laravel 快速开发简书</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Python3数据科学入门与实战/">Python3数据科学入门与实战</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

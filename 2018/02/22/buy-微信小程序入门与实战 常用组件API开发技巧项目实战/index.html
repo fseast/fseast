@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>微信小程序入门与实战 常用组件API开发技巧项目实战 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/75.html 第1章 什么是微信小程序？1-1 序：十几个小时的课程就这节最重要 1-2 开篇及课程特色介绍 1-3 直观感受一下微信小程序 1-4 小程序适合做什么样的应用 1-5 对开发者的影响 1-6 学习基础 1-7 小作业 第2章 小程序环境搭建与开发工具介绍2-1 开篇介绍及下载工具 2-2 小程序目">
+<meta name="keywords" content="微信小程序开发教程系列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序入门与实战 常用组件API开发技巧项目实战">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/75.html 第1章 什么是微信小程序？1-1 序：十几个小时的课程就这节最重要 1-2 开篇及课程特色介绍 1-3 直观感受一下微信小程序 1-4 小程序适合做什么样的应用 1-5 对开发者的影响 1-6 学习基础 1-7 小作业 第2章 小程序环境搭建与开发工具介绍2-1 开篇介绍及下载工具 2-2 小程序目">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211225932?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211234400?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211349657?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211357412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211406737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180221211416508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-02-22T05:28:34.459Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序入门与实战 常用组件API开发技巧项目实战">
+<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/75.html 第1章 什么是微信小程序？1-1 序：十几个小时的课程就这节最重要 1-2 开篇及课程特色介绍 1-3 直观感受一下微信小程序 1-4 小程序适合做什么样的应用 1-5 对开发者的影响 1-6 学习基础 1-7 小作业 第2章 小程序环境搭建与开发工具介绍2-1 开篇介绍及下载工具 2-2 小程序目">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180221211225932?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buy-微信小程序入门与实战 常用组件API开发技巧项目实战" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/" class="article-date">
+  <time datetime="2018-02-22T01:11:11.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信小程序入门与实战 常用组件API开发技巧项目实战
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/75.html" target="_blank" rel="noopener">https://coding.imooc.com/class/75.html</a><br><img src="http://img.blog.csdn.net/20180221211225932?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211234400?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h5 id="第1章-什么是微信小程序？"><a href="#第1章-什么是微信小程序？" class="headerlink" title="第1章 什么是微信小程序？"></a>第1章 什么是微信小程序？</h5><p>1-1 序：十几个小时的课程就这节最重要</p>
+<p>1-2 开篇及课程特色介绍</p>
+<p>1-3 直观感受一下微信小程序</p>
+<p>1-4 小程序适合做什么样的应用</p>
+<p>1-5 对开发者的影响</p>
+<p>1-6 学习基础</p>
+<p>1-7 小作业</p>
+<h5 id="第2章-小程序环境搭建与开发工具介绍"><a href="#第2章-小程序环境搭建与开发工具介绍" class="headerlink" title="第2章 小程序环境搭建与开发工具介绍"></a>第2章 小程序环境搭建与开发工具介绍</h5><p>2-1 开篇介绍及下载工具</p>
+<p>2-2 小程序目前情况及限制</p>
+<p>2-3 小程序开发工具介绍-</p>
+<h5 id="第3章-从一个简单的“欢迎“页面开始小程序之旅"><a href="#第3章-从一个简单的“欢迎“页面开始小程序之旅" class="headerlink" title="第3章 从一个简单的“欢迎“页面开始小程序之旅"></a>第3章 从一个简单的“欢迎“页面开始小程序之旅</h5><p>3-1 本章内容简介</p>
+<p>3-2 官方种子项目介绍与小程序的文件结构</p>
+<p>3-3 新建我们自己的项目：ReaderMovie</p>
+<p>3-4 开始制作项目启动页（如果出现错误，请参考 3-10 扩展）</p>
+<p>3-5 制作项目启动页（上）之自适应单位：RPX</p>
+<p>3-6 制作项目启动页（中）之样式与弹性盒子模型</p>
+<p>3-7 制作项目启动页（下）之小程序app.json基础配置</p>
+<p>3-8 章节扩展（可选观看1）移动端分辨率精讲</p>
+<p>3-9 章节扩展（可选观看2）小程序的自适应单位RPX精讲</p>
+<p>3-10 章节扩展（可选观看3）container样式无效或提示未正确调用Page的同学看这里</p>
+<h5 id="第4章-第二个页面：新闻阅读列表"><a href="#第4章-第二个页面：新闻阅读列表" class="headerlink" title="第4章 第二个页面：新闻阅读列表"></a>第4章 第二个页面：新闻阅读列表</h5><p>4-1 第四章课程简介</p>
+<p>4-2 真机运行小程序及小程序开发者后台简介</p>
+<p>4-3 使用Swiper组件构建轮播图</p>
+<p>4-4 构建新闻列表（上）</p>
+<p>4-5 构建新闻列表（下）</p>
+<p>4-6 js文件结构与Page页面的生命周期</p>
+<p>4-7 基础</p>
+<p>4-8 扩展</p>
+<p>4-9 使用列表渲染wx-for改写新闻列表</p>
+<p>4-10 小程序的事件机制（冒泡与非冒泡）上</p>
+<p>4-11 小程序的事件机制（冒泡与非冒泡）下</p>
+<h5 id="第5章-小程序的模板化与模块化"><a href="#第5章-小程序的模板化与模块化" class="headerlink" title="第5章 小程序的模板化与模块化"></a>第5章 小程序的模板化与模块化</h5><p>5-1 将业务中的数据分离到单独的数据文件中</p>
+<p>5-2 使用require方法加载js模块儿文件</p>
+<p>5-3 template模板的使用</p>
+<h5 id="第6章-构建新闻详情页面"><a href="#第6章-构建新闻详情页面" class="headerlink" title="第6章 构建新闻详情页面"></a>第6章 构建新闻详情页面</h5><p>6-1 从文章列表跳转到新闻详情页面（组件自定义属性及获取属性）</p>
+<p>6-2 先静后动，构建新闻详情页面样式</p>
+<p>6-3 配置全局导航栏颜色</p>
+<p>6-4 使用数据填充新闻详情页面</p>
+<p>6-5 缓存Storage的基本用法</p>
+<p>6-6 使用缓存实现文章收藏功能</p>
+<p>6-7 交互反馈 wx.showToast</p>
+<p>6-8 操作反馈wx.showModal</p>
+<p>6-9 交互反馈wx.showActionSheet</p>
+<p>6-10 同步异步方法对比</p>
+<p>6-11 playBackgroundAudio-音乐播放基本实现</p>
+<p>6-12 加入不同的音乐，个性化音乐播放</p>
+<p>6-13 监听播放事件完善音乐播放</p>
+<p>6-14 应用程序生命周期</p>
+<p>6-15 继续完善音乐播放</p>
+<p>6-16 音乐播放最终章</p>
+<p>6-17 真机如何清除缓存与template内路径问题</p>
+<h5 id="第7章-开始制作电影资讯页面"><a href="#第7章-开始制作电影资讯页面" class="headerlink" title="第7章 开始制作电影资讯页面"></a>第7章 开始制作电影资讯页面</h5><p>7-1 重要补充说明（关于API调用403）</p>
+<p>7-2 Banner轮播图跳转文章详情</p>
+<p>7-3 补充内容：tab选项卡课前准备</p>
+<p>7-4 给项目加入tab选项卡</p>
+<p>7-5 完善tab选项卡</p>
+<p>7-6 补充内容：为什么redirectTo不出现选项卡</p>
+<p>7-7 电影页面嵌套template分析</p>
+<p>7-8 3个嵌套template标签的实现</p>
+<p>7-9 stars template的样式实现</p>
+<p>7-10 movie template的样式实现</p>
+<p>7-11 movie-list template的样式实现</p>
+<p>7-12 RESTful API简介及调用豆瓣API</p>
+<p>7-13 获取正在热映、即将上映和Top250的数据</p>
+<p>7-14 电影页面数据绑定（上）</p>
+<p>7-15 电影页面数据绑定（下）</p>
+<p>7-16 星星评分组件的实现</p>
+<p>7-17 更换电影分类标题</p>
+<h5 id="第8章-更多电影及电影搜索页面的实现"><a href="#第8章-更多电影及电影搜索页面的实现" class="headerlink" title="第8章 更多电影及电影搜索页面的实现"></a>第8章 更多电影及电影搜索页面的实现</h5><p>8-1 更多电影页面的编写思路与电影类型获取</p>
+<p>8-2 动态设置导航栏标题</p>
+<p>8-3 更多电影页面加载数据</p>
+<p>8-4 实现movie-grid template</p>
+<p>8-5 实现上滑加载更多数据</p>
+<p>8-6 设置loading状态</p>
+<p>8-7 实现下拉刷新数据</p>
+<p>8-8 backgroundColor 到底设置的是哪里的颜色</p>
+<h5 id="第9章-构建电影详情页面"><a href="#第9章-构建电影详情页面" class="headerlink" title="第9章 构建电影详情页面"></a>第9章 构建电影详情页面</h5><p>9-1 电影搜索页面构建（上）</p>
+<p>9-2 电影搜索页面构建（下）</p>
+<p>9-3 tabbar的图片路径不要使用绝对路径</p>
+<p>9-4 修复音乐播放完成后图标状态没有复位的bug</p>
+<p>9-5 编写电影详情页面(上）</p>
+<p>9-6 编写电影详情页面（下）</p>
+<p>9-7 图片的缩放与裁剪</p>
+<p>9-8 新版本更新后的补充章节</p>
+<p>9-9 编写电影详情页面骨架</p>
+<p>9-10 完成电影详情页面（上）</p>
+<p>9-11 完成电影详情页面 （下）</p>
+<p>9-12 小程序Q&amp;A</p>
+<h5 id="第10章-Form表单类组件与Map地图组件"><a href="#第10章-Form表单类组件与Map地图组件" class="headerlink" title="第10章 Form表单类组件与Map地图组件"></a>第10章 Form表单类组件与Map地图组件</h5><p>10-1 form之switch组件</p>
+<p>10-2 form之slider组件</p>
+<p>10-3 form之radio组件</p>
+<p>10-4 form之checkbox组件</p>
+<p>10-5 form表单提交</p>
+<p>10-6 map组件</p>
+<h5 id="第11章-扩展内容ES6在小程序中的使用与微信小程序后台账号配置"><a href="#第11章-扩展内容ES6在小程序中的使用与微信小程序后台账号配置" class="headerlink" title="第11章 扩展内容ES6在小程序中的使用与微信小程序后台账号配置"></a>第11章 扩展内容ES6在小程序中的使用与微信小程序后台账号配置</h5><p>11-1 小程序常见问题（非常重要）</p>
+<p>11-2 小程序中的ES6 Class</p>
+<p>11-3 使用Module和Class提取封装一个Movie对象</p>
+<p>11-4 箭头函数、致谢与再见</p>
+<h5 id="第12章-0-15-152900-版本重要API、功能讲解"><a href="#第12章-0-15-152900-版本重要API、功能讲解" class="headerlink" title="第12章 0.15.152900 版本重要API、功能讲解"></a>第12章 0.15.152900 版本重要API、功能讲解</h5><p>12-1 新版本重要特性总览</p>
+<p>12-2 选择用户收货地址API</p>
+<p>12-3 对login、getUserInfo等接口的改动与理解</p>
+<p>12-4 用户设置界面与动态分享详解</p>
+<p>12-5 场景值获取方式与应用举例</p>
+<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180221211349657?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211357412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211406737?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180221211416508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/22/buy-微信小程序入门与实战 常用组件API开发技巧项目实战/" data-id="cjdzo4csf001v7oult26eizjf" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/22/buy-让你页面速度飞起来 Web前端性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          让你页面速度飞起来 Web前端性能优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/22/buy-10小时入门大数据/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">10小时入门大数据</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python实战教程系列/">Python实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java面试系列教程/">java面试系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java面试系列教程/">java面试系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/23/善东/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-6小时 jQuery开发一个前端应用/">6小时 jQuery开发一个前端应用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Laravel 快速开发简书/">Laravel 快速开发简书</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Python3数据科学入门与实战/">Python3数据科学入门与实战</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

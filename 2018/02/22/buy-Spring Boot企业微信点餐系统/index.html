@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Spring Boot企业微信点餐系统 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/117.html  第1章 课程介绍1-1 课程介绍 第2章 项目设计2-1 项目设计 2-2 架构和基础框架 2-3 数据库设计 第3章 项目起步3-1 开发环境搭建 3-2 日志的使用 3-3 源码下载及使用 第4章 买家端类目4-1 买家类目-dao（上） 4-2 买家类目-dao（下） 4-3 买家类目-s">
+<meta name="keywords" content="java系列视频教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot企业微信点餐系统">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-Spring Boot企业微信点餐系统/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/117.html  第1章 课程介绍1-1 课程介绍 第2章 项目设计2-1 项目设计 2-2 架构和基础框架 2-3 数据库设计 第3章 项目起步3-1 开发环境搭建 3-2 日志的使用 3-3 源码下载及使用 第4章 买家端类目4-1 买家类目-dao（上） 4-2 买家类目-dao（下） 4-3 买家类目-s">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222135555581?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/2018022213560412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222135821808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222135828929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222135838487?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222135845808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-02-22T06:15:36.295Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Boot企业微信点餐系统">
+<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/117.html  第1章 课程介绍1-1 课程介绍 第2章 项目设计2-1 项目设计 2-2 架构和基础框架 2-3 数据库设计 第3章 项目起步3-1 开发环境搭建 3-2 日志的使用 3-3 源码下载及使用 第4章 买家端类目4-1 买家类目-dao（上） 4-2 买家类目-dao（下） 4-3 买家类目-s">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180222135555581?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buy-Spring Boot企业微信点餐系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/22/buy-Spring Boot企业微信点餐系统/" class="article-date">
+  <time datetime="2018-02-22T07:11:11.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java系列视频教程/">java系列视频教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring Boot企业微信点餐系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/117.html" target="_blank" rel="noopener">https://coding.imooc.com/class/117.html</a></p>
+<p><img src="http://img.blog.csdn.net/20180222135555581?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022213560412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h5 id="第1章-课程介绍"><a href="#第1章-课程介绍" class="headerlink" title="第1章 课程介绍"></a>第1章 课程介绍</h5><p>1-1 课程介绍</p>
+<h5 id="第2章-项目设计"><a href="#第2章-项目设计" class="headerlink" title="第2章 项目设计"></a>第2章 项目设计</h5><p>2-1 项目设计</p>
+<p>2-2 架构和基础框架</p>
+<p>2-3 数据库设计</p>
+<h5 id="第3章-项目起步"><a href="#第3章-项目起步" class="headerlink" title="第3章 项目起步"></a>第3章 项目起步</h5><p>3-1 开发环境搭建</p>
+<p>3-2 日志的使用</p>
+<p>3-3 源码下载及使用</p>
+<h5 id="第4章-买家端类目"><a href="#第4章-买家端类目" class="headerlink" title="第4章 买家端类目"></a>第4章 买家端类目</h5><p>4-1 买家类目-dao（上）</p>
+<p>4-2 买家类目-dao（下）</p>
+<p>4-3 买家类目-service</p>
+<h5 id="第5章-买家端商品"><a href="#第5章-买家端商品" class="headerlink" title="第5章 买家端商品"></a>第5章 买家端商品</h5><p>5-1 买家商品-dao</p>
+<p>5-2 买家商品-service</p>
+<p>5-3 买家商品-api（上）</p>
+<p>5-4 买家商品-api（下）</p>
+<h5 id="第6章-买家端订单"><a href="#第6章-买家端订单" class="headerlink" title="第6章 买家端订单"></a>第6章 买家端订单</h5><p>6-1 买家订单-dao(上)</p>
+<p>6-2 买家订单-dao(下)</p>
+<p>6-3 买家订单-service创建_A</p>
+<p>6-4 买家订单-service创建_B</p>
+<p>6-5 买家订单-service创建_C</p>
+<p>6-6 买家订单-service创建_D</p>
+<p>6-7 买家订单-service查询</p>
+<p>6-8 买家订单-service取消</p>
+<p>6-9 买家订单-service finish和paid</p>
+<p>6-10 买家订单-api_A</p>
+<p>6-11 买家订单-api_B</p>
+<p>6-12 买家订单-api_C</p>
+<p>6-13 买家订单-api_D</p>
+<h5 id="第7章-微信授权"><a href="#第7章-微信授权" class="headerlink" title="第7章 微信授权"></a>第7章 微信授权</h5><p>7-1 设置域名</p>
+<p>7-2 获取code</p>
+<p>7-3 换取access_token</p>
+<p>7-4 使用sdk方式（上）</p>
+<p>7-5 使用sdk方式（下）</p>
+<p>7-6 微信网页授权前端调试</p>
+<h5 id="第8章-微信支付和退款"><a href="#第8章-微信支付和退款" class="headerlink" title="第8章 微信支付和退款"></a>第8章 微信支付和退款</h5><p>8-1 发起微信支付-后端（上）</p>
+<p>8-2 发起微信支付-后端（下）</p>
+<p>8-3 在网页发起支付</p>
+<p>8-4 动态注入参数发起支付</p>
+<p>8-5 微信异步通知（上）</p>
+<p>8-6 微信异步通知（下）</p>
+<p>8-7 微信退款</p>
+<p>8-8 补充：使用测试号实现授权</p>
+<h5 id="第9章-卖家端订单"><a href="#第9章-卖家端订单" class="headerlink" title="第9章 卖家端订单"></a>第9章 卖家端订单</h5><p>9-1 卖家订单-service</p>
+<p>9-2 卖家-订单-controller（上）</p>
+<p>9-3 卖家-订单-controller（下）</p>
+<p>9-4 卖家订单-controller-翻页</p>
+<p>9-5 卖家订单-controller-取消订单</p>
+<p>9-6 卖家订单-controller-订单详情</p>
+<p>9-7 卖家订单-controller-完结订单</p>
+<h5 id="第10章-卖家端通用功能和上下架"><a href="#第10章-卖家端通用功能和上下架" class="headerlink" title="第10章 卖家端通用功能和上下架"></a>第10章 卖家端通用功能和上下架</h5><p>10-1 关于模版的小技巧</p>
+<p>10-2 实现边栏</p>
+<p>10-3 实现商品列表</p>
+<p>10-4 商品上下架-service</p>
+<p>10-5 商品上下架-controller</p>
+<h5 id="第11章-卖家端新增商品和类目"><a href="#第11章-卖家端新增商品和类目" class="headerlink" title="第11章 卖家端新增商品和类目"></a>第11章 卖家端新增商品和类目</h5><p>11-1 卖家商品-新增修改页面</p>
+<p>11-2 卖家商品-修改表单提交</p>
+<p>11-3 卖家商品-新增功能</p>
+<p>11-4 卖家类目功能开发</p>
+<h5 id="第12章-买家和卖家端联通"><a href="#第12章-买家和卖家端联通" class="headerlink" title="第12章 买家和卖家端联通"></a>第12章 买家和卖家端联通</h5><p>12-1 分布式session理论(上)</p>
+<p>12-2 分布式session理论(下)</p>
+<p>12-3 卖家信息表-dao开发</p>
+<p>12-4 卖家扫码登录service开发</p>
+<p>12-5 卖家扫码登录获取openid</p>
+<p>12-6 登录成功</p>
+<p>12-7 登出成功</p>
+<p>12-8 AOP实现身份验证</p>
+<p>12-9 微信模版消息推送</p>
+<p>12-10 webSocket消息推送</p>
+<h5 id="第13章-项目优化"><a href="#第13章-项目优化" class="headerlink" title="第13章 项目优化"></a>第13章 项目优化</h5><p>13-1 异常捕获</p>
+<p>13-2 mybatis注解方式使用_A</p>
+<p>13-3 mybatis注解方式使用_B</p>
+<p>13-4 mybatis xml方式使用</p>
+<p>13-5 jpa和mybatis的选择</p>
+<p>13-6 ab压测介绍</p>
+<p>13-7 synchronized处理并发</p>
+<p>13-8 redis分布式锁</p>
+<p>13-9 redis缓存的使用(上)</p>
+<p>13-10 redis缓存的使用(下)</p>
+<h5 id="第14章-项目部署"><a href="#第14章-项目部署" class="headerlink" title="第14章 项目部署"></a>第14章 项目部署</h5><p>14-1 项目部署</p>
+<h5 id="第15章-课程总结"><a href="#第15章-课程总结" class="headerlink" title="第15章 课程总结"></a>第15章 课程总结</h5><p>15-1 13.总结</p>
+<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222135821808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135828929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135838487?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222135845808?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/22/buy-Spring Boot企业微信点餐系统/" data-id="cjdzo4cs4001c7oul6773fjz6" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/22/buy-Spring Boot带前后端 渐进式开发企业级博客系统/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          Spring Boot带前后端 渐进式开发企业级博客系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/22/buy-SSM到Spring Boot 从零开发校园商铺平台/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">SSM到Spring Boot 从零开发校园商铺平台</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python实战教程系列/">Python实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java面试系列教程/">java面试系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java面试系列教程/">java面试系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/23/善东/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-6小时 jQuery开发一个前端应用/">6小时 jQuery开发一个前端应用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Laravel 快速开发简书/">Laravel 快速开发简书</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Python3数据科学入门与实战/">Python3数据科学入门与实战</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

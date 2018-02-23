@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>双平台真实开发GitHub App React Native技术全面掌握 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/89.html 第1章 开发准备（计划更新，对老用户免费） 1-1 项目介绍与开发计划 1-2 项目技术分解 1-3 项目结构介绍 1-4 项目底部导航菜单开发 1-5 Navigator的基本使用及页面间数据传递实现 1-6 自定义组件NavigationBar-1 1-7 自定义组件NavigationBar-">
+<meta name="keywords" content="跨平台实战项目开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双平台真实开发GitHub App React Native技术全面掌握">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-双平台真实开发GitHub App React Native技术全面掌握/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/89.html 第1章 开发准备（计划更新，对老用户免费） 1-1 项目介绍与开发计划 1-2 项目技术分解 1-3 项目结构介绍 1-4 项目底部导航菜单开发 1-5 Navigator的基本使用及页面间数据传递实现 1-6 自定义组件NavigationBar-1 1-7 自定义组件NavigationBar-">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160233909?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/2018022216024569?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160426470?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160434397?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180222160443216?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/2018022216045336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-02-22T08:10:50.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="双平台真实开发GitHub App React Native技术全面掌握">
+<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/89.html 第1章 开发准备（计划更新，对老用户免费） 1-1 项目介绍与开发计划 1-2 项目技术分解 1-3 项目结构介绍 1-4 项目底部导航菜单开发 1-5 Navigator的基本使用及页面间数据传递实现 1-6 自定义组件NavigationBar-1 1-7 自定义组件NavigationBar-">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180222160233909?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buy-双平台真实开发GitHub App React Native技术全面掌握" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/22/buy-双平台真实开发GitHub App React Native技术全面掌握/" class="article-date">
+  <time datetime="2018-02-22T08:52:11.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      双平台真实开发GitHub App React Native技术全面掌握
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/89.html" target="_blank" rel="noopener">https://coding.imooc.com/class/89.html</a><br><img src="http://img.blog.csdn.net/20180222160233909?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022216024569?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>第1章 开发准备（计划更新，对老用户免费）</p>
+<p>1-1 项目介绍与开发计划</p>
+<p>1-2 项目技术分解</p>
+<p>1-3 项目结构介绍</p>
+<p>1-4 项目底部导航菜单开发</p>
+<p>1-5 Navigator的基本使用及页面间数据传递实现</p>
+<p>1-6 自定义组件NavigationBar-1</p>
+<p>1-7 自定义组件NavigationBar-2</p>
+<p>1-8 自定义组件NavigationBar-3</p>
+<p>第2章 项目基础功能开发（ListView、下拉刷新、上拉加载更多、APP启动引导流程）</p>
+<p>2-1 ListView列表、下拉刷新、上拉加载的基本使用</p>
+<p>2-2 网络编程利器-Fetch的基本使用</p>
+<p>2-3 网络编程利器-Fetch的轻量级封装</p>
+<p>2-4 项目启动引导流程实现</p>
+<p>第3章 Popular(最热）模块开发（AsyncStorage数据库技术、离线缓存）</p>
+<p>3-1 Popular(最热)模块的数据层设计</p>
+<p>3-2 Popular(最热)模块的列表页面实现-1</p>
+<p>3-3 Popular(最热)模块的列表页面实现-2</p>
+<p>3-4 Popular(最热)模块的列表页面实现-3</p>
+<p>3-5 AsyncStorage异步数据存储技术解析</p>
+<p>3-6 Popular(最热)模块的自定义标签功能实现-1</p>
+<p>3-7 Popular(最热)模块的自定义标签功能实现-2</p>
+<p>3-8 Popular(最热)模块的自定义标签功能实现-3</p>
+<p>3-9 Popular(最热)模块的自定义标签功能实现-4</p>
+<p>3-10 Popular(最热)模块的标签排序功能实现-1</p>
+<p>3-11 Popular(最热)模块的标签排序功能实现-2</p>
+<p>3-12 Popular(最热)模块的标签移除功能实现</p>
+<p>3-13 Popular(最热)模块的离线缓存功能实现</p>
+<p>3-14 WebView控件实现简单浏览器</p>
+<p>3-15 Popular(最热)模块的详情页功能实现</p>
+<p>第4章 Trending(趋势)模块开发（代码优化技巧、高复用代码设计）</p>
+<p>4-1 Trending(趋势)模块的数据接口实现原理及使用详解</p>
+<p>4-2 Trending(趋势)模块的数据层设计</p>
+<p>4-3 Trending(趋势)模块的列表页面实现</p>
+<p>4-4 Pop弹窗功能实现</p>
+<p>4-5 Trending(趋势)模块的自定义语言功能实现</p>
+<p>4-6 Trending(趋势)模块的自定义语言排序功能实现</p>
+<p>第5章 Favorite(收藏)模块开发（数据DAO层设计技巧，数据状态实时更新）</p>
+<p>5-1 为Popular(最热)模块的列表页添加收藏功能-1</p>
+<p>5-2 为Popular(最热)模块的列表页添加收藏功能-2</p>
+<p>5-3 Favorite(收藏)模块的收藏状态数据DAO层设计</p>
+<p>5-4 Favarite(收藏)模块的数据收藏状态实时更新</p>
+<p>5-5 为Trending(趋势)模块的列表页添加收藏功能</p>
+<p>5-6 为Popular(最热)与Trending(趋势)模块的详情页添加收藏的功能</p>
+<p>5-7 Favorite(收藏)模块列表页面基本实现与用户所收藏的项目数据获取</p>
+<p>5-8 Favorite(收藏)模块列表页面具体实现-1</p>
+<p>5-9 Favorite(收藏)模块列表页面具体实现-2</p>
+<p>第6章 My(我的)模块开发（代码提取技巧，组合模式应用技巧，数据异步刷新与动态添加）</p>
+<p>6-1 My(我的)模块分组列表页面实现-1</p>
+<p>6-2 My(我的)模块分组列表页面实现-2</p>
+<p>6-3 My(我的)模块分组列表页面实现-3</p>
+<p>6-4 My(我的)模块项目介绍页面简单实现（parallar-scroll-view）-1</p>
+<p>6-5 My(我的)模块项目介绍页面简单实现（parallar-scroll-view）-2</p>
+<p>6-6 My(我的)模块项目介绍页面复用代码提取技巧</p>
+<p>6-7 My(我的)模块意见反馈，项目官网展示功能实现</p>
+<p>6-8 My(我的)模块项目介绍数据请求工具开发（RepositoryUtil）-1</p>
+<p>6-9 My(我的)模块项目介绍数据请求工具开发（RepositoryUtil）-2</p>
+<p>6-10 My(我的)模块项目介绍数据展示-1</p>
+<p>6-11 My(我的)模块项目介绍数据展示-2</p>
+<p>6-12 My(我的)模块关于作者页面实现(自定义可扩展列表)-1</p>
+<p>6-13 My(我的)模块关于作者页面实现-2</p>
+<p>第7章 Search(搜索)模块开发（动态关键字，可取消异步任务设计）</p>
+<p>7-1 带搜索的NavBar实现-1</p>
+<p>7-2 带搜索的NavBar实现-2</p>
+<p>7-3 搜索数据显示与onFavorite()方法的提取-1</p>
+<p>7-4 搜索数据显示与onFavorite()方法的提取-2</p>
+<p>7-5 为Search（搜索）模块添加进度条与底部按钮-1</p>
+<p>7-6 为Search（搜索）模块添加进度条与底部按钮-2</p>
+<p>7-7 添加返回首页数据刷新功能</p>
+<p>7-8 为Promise插上翅膀之可取消的异步任务</p>
+<p>第8章 MoreMenu(更多菜单)模块开发（封装可配置菜单组件，RN版本升级踩坑）</p>
+<p>8-1 可配置菜单的实现-1</p>
+<p>8-2 可配置菜单的实现-2</p>
+<p>8-3 可配置菜单的实现-3</p>
+<p>8-4 ReactNative版本升级踩坑（0.39-to-0.40）</p>
+<p>第9章 高级功能开发（多彩主题、数据统计、社会化分享、第三方登录，热更新等）</p>
+<p>9-1 构建自定义多彩主题页面</p>
+<p>9-2 应用自定义多彩主题页面-1</p>
+<p>9-3 应用自定义多彩主题页面-2</p>
+<p>9-4 实现自定义多彩主题变换</p>
+<p>9-5 React Native原生模块的封装(Android)</p>
+<p>9-6 React Native原生模块的封装(iOS)</p>
+<p>9-7 React Native集成统计功能</p>
+<p>9-8 React Native 分享与第三方登录模块开发(Android)-分享模块开发</p>
+<p>9-9 React Native分享与第三方登录模块开发(Android)-分享模块的应用</p>
+<p>9-10 React Native 分享与第三方登录模块开发(iOS)</p>
+<p>9-11 React Native启动白屏问题原因及解决方案(Android)</p>
+<p>9-12 React Native启动白屏问题原因及解决方案(iOS)</p>
+<p>9-13 如何适配Android和iOS双平台</p>
+<p>9-14 CodePush 热更新-集成CodePush(Android)</p>
+<p>9-15 CodePush 热更新-集成CodePush(iOS)</p>
+<p>9-16 CodePush 热更新-应用CodePush(Android)</p>
+<p>9-17 CodePush 热更新-应用CodePush(iOS)</p>
+<p>第10章 项目发布前的优化、打包与上线Android和IOS APP、学习资料</p>
+<p>10-1 项目发布前的优化(Android)</p>
+<p>10-2 项目发布前的优化(iOS)</p>
+<p>10-3 项目打包发布Android应用</p>
+<p>10-4 项目打包发布iOS应用</p>
+<p>10-5 课程总结</p>
+<p>第11章 最新版React Native 的升级与适配（计划更新）</p>
+<p>第12章 API升级、依赖组件更新及适配(计划更新)</p>
+<p>第13章 从navigator到react-navigation实战教程&amp;技巧（计划更新）</p>
+<p>第14章 新特性：从ListView到FlatList，走进高性能的列表（计划更新）</p>
+<p>第15章 React Native全面屏适配指南（计划更新）</p>
+<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222160426470?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160434397?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222160443216?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/2018022216045336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/22/buy-双平台真实开发GitHub App React Native技术全面掌握/" data-id="cjdzo4csa001n7oulcqztsyrq" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/22/buy-掌握React Native技术转型随意切换/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          掌握React Native技术转型随意切换
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/22/buy-BAT大牛亲授 基于ElasticSearch的搜房网实战/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">BAT大牛亲授 基于ElasticSearch的搜房网实战</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorías</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python实战教程系列/">Python实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端系列教程/">Web前端系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java系列视频教程/">java系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java面试系列教程/">java面试系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql课程系列/">mysql课程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据系列视频教程/">大数据系列视频教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法系列教程/">算法系列教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python实战教程系列/">Python实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis分布式实战教程系列/">Redis分布式实战教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端系列教程/">Web前端系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java系列视频教程/">java系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java面试系列教程/">java面试系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql课程系列/">mysql课程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数据系列视频教程/">大数据系列视频教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序开发教程系列/">微信小程序开发教程系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法系列教程/">算法系列教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨平台实战项目开发/">跨平台实战项目开发</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python实战教程系列/" style="font-size: 16.67px;">Python实战教程系列</a> <a href="/tags/Redis分布式实战教程系列/" style="font-size: 10px;">Redis分布式实战教程系列</a> <a href="/tags/Web前端系列教程/" style="font-size: 20px;">Web前端系列教程</a> <a href="/tags/java系列视频教程/" style="font-size: 20px;">java系列视频教程</a> <a href="/tags/java面试系列教程/" style="font-size: 10px;">java面试系列教程</a> <a href="/tags/mysql课程系列/" style="font-size: 10px;">mysql课程系列</a> <a href="/tags/大数据系列视频教程/" style="font-size: 13.33px;">大数据系列视频教程</a> <a href="/tags/微信小程序开发教程系列/" style="font-size: 10px;">微信小程序开发教程系列</a> <a href="/tags/算法系列教程/" style="font-size: 13.33px;">算法系列教程</a> <a href="/tags/跨平台实战项目开发/" style="font-size: 10px;">跨平台实战项目开发</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/23/善东/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-6小时 jQuery开发一个前端应用/">6小时 jQuery开发一个前端应用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Laravel 快速开发简书/">Laravel 快速开发简书</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/22/buy-Python3数据科学入门与实战/">Python3数据科学入门与实战</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
