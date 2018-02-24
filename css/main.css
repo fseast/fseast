@@ -1090,7 +1090,8 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: url("E:/anzhuang/hexo/themes/hexo-theme-next/source/images/tx.jpg");
+  background: url("../header_background.jpg") no-repeat;
+  background-size: 100%;
 }
 .header-inner {
   position: relative;
@@ -1113,7 +1114,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+/* background: $brand-bg; */
   border-bottom: none;
 }
 .brand:hover {
@@ -1200,6 +1201,7 @@ pre .javascript .function {
   }
 }
 .menu .menu-item a {
+  color: #940dca;
   display: block;
   font-size: 13px;
   line-height: inherit;
@@ -1934,7 +1936,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ddfeb0;
+  background: #c88ce3;
 }
 .links-of-blogroll {
   font-size: 13px;
