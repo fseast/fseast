@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="java系列视频教程," />
+  <meta name="keywords" content="大数据系列视频教程," />
 
 
 
@@ -96,23 +96,28 @@
 
 
 
-<meta name="description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/167.html  第1章 课程介绍1-1 导学 1-2 技术选型介绍 1-3 学习建议 第2章 项目设计2-1 _需求分析 2-2 _数据库设计 第3章 环境搭建3-1 环境要求 3-2 后端框架搭建 3-3 集成单元测试及H2 3-4 前端集成 第4章 架构设计4-1 架构设计与分层 4-2 API结构设计_R">
-<meta name="keywords" content="java系列视频教程">
+<meta name="description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="keywords" content="大数据系列视频教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BAT大牛亲授 基于ElasticSearch的搜房网实战">
-<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-BAT大牛亲授 基于ElasticSearch的搜房网实战/index.html">
+<meta property="og:title" content="10小时入门大数据">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/index.html">
 <meta property="og:site_name" content="Fseast Blog">
-<meta property="og:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/167.html  第1章 课程介绍1-1 导学 1-2 技术选型介绍 1-3 学习建议 第2章 项目设计2-1 _需求分析 2-2 _数据库设计 第3章 环境搭建3-1 环境要求 3-2 后端框架搭建 3-3 集成单元测试及H2 3-4 前端集成 第4章 架构设计4-1 架构设计与分层 4-2 API结构设计_R">
-<meta property="og:image" content="http://img.blog.csdn.net/20180222155834956?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="http://img.blog.csdn.net/20180222155843670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="http://img.blog.csdn.net/20180222155851304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="http://img.blog.csdn.net/20180222155858235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="http://img.blog.csdn.net/20180222155905892?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-02-22T08:05:12.117Z">
+<meta property="og:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719124823884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125508744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125245350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125940152.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719130425764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719112345813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719130810286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123625511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123709916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-10T17:29:42.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BAT大牛亲授 基于ElasticSearch的搜房网实战">
-<meta name="twitter:description" content="课程大纲来自慕课教程：https://coding.imooc.com/class/167.html  第1章 课程介绍1-1 导学 1-2 技术选型介绍 1-3 学习建议 第2章 项目设计2-1 _需求分析 2-2 _数据库设计 第3章 环境搭建3-1 环境要求 3-2 后端框架搭建 3-3 集成单元测试及H2 3-4 前端集成 第4章 架构设计4-1 架构设计与分层 4-2 API结构设计_R">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20180222155834956?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="10小时入门大数据">
+<meta name="twitter:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -142,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/22/buy-BAT大牛亲授 基于ElasticSearch的搜房网实战/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/22/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/"/>
 
 
 
 
 
-  <title>BAT大牛亲授 基于ElasticSearch的搜房网实战 | Fseast Blog</title>
+  <title>10小时入门大数据 | Fseast Blog</title>
   
 
 
@@ -288,7 +293,7 @@ My friend promised me to go if I had the road
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/buy-BAT大牛亲授 基于ElasticSearch的搜房网实战/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fseast">
@@ -305,7 +310,7 @@ My friend promised me to go if I had the road
 
         
         
-          <h1 class="post-title" itemprop="name headline">BAT大牛亲授 基于ElasticSearch的搜房网实战</h1>
+          <h1 class="post-title" itemprop="name headline">10小时入门大数据</h1>
         
 
         <div class="post-meta">
@@ -317,7 +322,7 @@ My friend promised me to go if I had the road
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T16:49:11+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T08:11:11+08:00">
                 2018-02-22
               </time>
             
@@ -340,8 +345,8 @@ My friend promised me to go if I had the road
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java系列视频教程/" itemprop="url" rel="index">
-                    <span itemprop="name">java系列视频教程</span>
+                  <a href="/categories/大数据系列视频教程/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据系列视频教程</span>
                   </a>
                 </span>
 
@@ -377,97 +382,34 @@ My friend promised me to go if I had the road
       
 
       
-        <h4 id="课程大纲"><a href="#课程大纲" class="headerlink" title="课程大纲"></a>课程大纲</h4><p>来自慕课教程：<a href="https://coding.imooc.com/class/167.html" target="_blank" rel="noopener">https://coding.imooc.com/class/167.html</a></p>
-<p><img src="http://img.blog.csdn.net/20180222155834956?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222155843670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h5 id="第1章-课程介绍"><a href="#第1章-课程介绍" class="headerlink" title="第1章 课程介绍"></a>第1章 课程介绍</h5><p>1-1 导学</p>
-<p>1-2 技术选型介绍</p>
-<p>1-3 学习建议</p>
-<h5 id="第2章-项目设计"><a href="#第2章-项目设计" class="headerlink" title="第2章 项目设计"></a>第2章 项目设计</h5><p>2-1 _需求分析</p>
-<p>2-2 _数据库设计</p>
-<h5 id="第3章-环境搭建"><a href="#第3章-环境搭建" class="headerlink" title="第3章 环境搭建"></a>第3章 环境搭建</h5><p>3-1 环境要求</p>
-<p>3-2 后端框架搭建</p>
-<p>3-3 集成单元测试及H2</p>
-<p>3-4 前端集成</p>
-<h5 id="第4章-架构设计"><a href="#第4章-架构设计" class="headerlink" title="第4章 架构设计"></a>第4章 架构设计</h5><p>4-1 架构设计与分层</p>
-<p>4-2 API结构设计_RESTFul API</p>
-<p>4-3 API结构设计_标准制定</p>
-<p>4-4 API结构设计_异常拦截器</p>
-<p>4-5 功能性页面开发</p>
-<h5 id="第5章-后台管理模块实现"><a href="#第5章-后台管理模块实现" class="headerlink" title="第5章 后台管理模块实现"></a>第5章 后台管理模块实现</h5><p>5-1 业务与功能分析设计</p>
-<p>5-2 后台登录功能实现</p>
-<p>5-3 权限控制</p>
-<p>5-4 验证失败逻辑处理</p>
-<h5 id="第6章-房源信息管理模块实现"><a href="#第6章-房源信息管理模块实现" class="headerlink" title="第6章 房源信息管理模块实现"></a>第6章 房源信息管理模块实现</h5><p>6-1 业务与功能分析设计_</p>
-<p>6-2 基于七牛云的图片上传</p>
-<p>6-3 基于七牛云的图片上传_本地上传</p>
-<p>6-4 基于七牛云的图片上传_上云1</p>
-<p>6-5 基于七牛云的图片上传_上云2</p>
-<p>6-6 新增房源信息功能实现_上</p>
-<p>6-7 新增房源信息功能实现_中</p>
-<p>6-8 新增房源信息功能实现_下</p>
-<p>6-9 房源浏览功能实现_基本开发</p>
-<p>6-10 房源浏览功能实现_分页实现</p>
-<p>6-11 房源浏览功能实现_多维度排序</p>
-<p>6-12 编辑功能实现_上</p>
-<p>6-13 编辑功能实现_下</p>
-<p>6-14 审核功能实现</p>
-<h5 id="第7章-基础功能实现"><a href="#第7章-基础功能实现" class="headerlink" title="第7章 基础功能实现"></a>第7章 基础功能实现</h5><p>7-1 功能与分析设计</p>
-<p>7-2 默认排序实现（上）</p>
-<p>7-3 默认排序实现（下）</p>
-<p>7-4 其他维度排序实现</p>
-<p>7-5 房源信息详情页</p>
-<h5 id="第8章-搜索引擎实现"><a href="#第8章-搜索引擎实现" class="headerlink" title="第8章 搜索引擎实现"></a>第8章 搜索引擎实现</h5><p>8-1 业务与功能分析</p>
-<p>8-2 ES与MySQL技术选型对比</p>
-<p>8-3 索引结构设计（上）</p>
-<p>8-4 索引结构设计（下）</p>
-<p>8-5 索引构建_核心逻辑（上）</p>
-<p>8-6 索引构建_核心逻辑（下）</p>
-<p>8-7 索引构建-消息中间件介绍</p>
-<p>8-8 索引构建_异步实现</p>
-<p>8-9 搜索引擎_上</p>
-<p>8-10 搜索引擎_下</p>
-<p>8-11 中文分词_问题描述</p>
-<p>8-12 中文分词_巧解之道</p>
-<p>8-13 Search-as-you-type</p>
-<p>8-14 小区房源统计功能</p>
-<p>8-15 搜索引擎优化</p>
-<h5 id="第9章-基于百度地图的找房功能"><a href="#第9章-基于百度地图的找房功能" class="headerlink" title="第9章 基于百度地图的找房功能"></a>第9章 基于百度地图的找房功能</h5><p>9-1 _业务与功能分析</p>
-<p>9-2 _基于ES的地图点聚合（上）</p>
-<p>9-3 _基于ES的地图点聚合（下）</p>
-<p>9-4 地图鼠标事件应用</p>
-<p>9-5 基于地址获取经纬度的开发实现</p>
-<p>9-6 基于ES的地图查询功能</p>
-<p>9-7 基于ES的视野数据源绑定</p>
-<p>9-8 基于百度LBS的云麻点_POI数据增删改（上）</p>
-<p>9-9 基于百度LBS的云麻点_POI数据增删改（下）</p>
-<p>9-10 基于百度LBS的云麻点_POI数据应用</p>
-<h5 id="第10章-会员系统"><a href="#第10章-会员系统" class="headerlink" title="第10章 会员系统"></a>第10章 会员系统</h5><p>10-1 业务与功能分析_</p>
-<p>10-2 免注册登录_核心逻辑</p>
-<p>10-3 免注册登录_阿里云实现-</p>
-<p>10-4 会员中心</p>
-<p>10-5 用户预约功能（上）</p>
-<p>10-6 用户预约功能（下）</p>
-<p>10-7 经纪人完成预约功能</p>
-<p>10-8 _api权限拦截器</p>
-<p>10-9 _基于美洽的客服系统</p>
-<h5 id="第11章-ElasticSearch优化"><a href="#第11章-ElasticSearch优化" class="headerlink" title="第11章 ElasticSearch优化"></a>第11章 ElasticSearch优化</h5><p>11-1 索引结构优化</p>
-<p>11-2 配置优化</p>
-<p>11-3 基于Nginx实现负载均衡</p>
-<p>11-4 安全控制_基本认证</p>
-<p>11-5 安全控制_选择性认证</p>
-<p>11-6 基于SpringSchedule的监控任务</p>
-<p>11-7 基于SpringMail的报警系统</p>
-<h5 id="第12章-基于ELK的应用分析"><a href="#第12章-基于ELK的应用分析" class="headerlink" title="第12章 基于ELK的应用分析"></a>第12章 基于ELK的应用分析</h5><p>12-1 <em>业务与功能分析设计</em></p>
-<p>12-2 Logstash应用_日志采集</p>
-<p>12-3 Logstash应用_Nginx日志拆解入库</p>
-<p>12-4 <em>数据可视化分析</em>全局流量趋势</p>
-<p>12-5 <em>数据可视化分析</em>房源访问流量趋势图</p>
-<h5 id="第13章-项目上线"><a href="#第13章-项目上线" class="headerlink" title="第13章 项目上线"></a>第13章 项目上线</h5><p>13-1 <em>单元测试覆盖率报告.mov</em>音频</p>
-<p>13-2 _线上线下配置分离</p>
-<h5 id="第14章-课程总结"><a href="#第14章-课程总结" class="headerlink" title="第14章 课程总结"></a>第14章 课程总结</h5><p>14-1 <em>课程总结</em></p>
-<h4 id="教程截图"><a href="#教程截图" class="headerlink" title="教程截图"></a>教程截图</h4><p><img src="http://img.blog.csdn.net/20180222155851304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222155858235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20180222155905892?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzM1MjQxNTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="更多教程"><a href="#更多教程" class="headerlink" title="更多教程"></a>更多教程</h4><p>教程不断整理更新中，以上截图仅供参考，如需了解更多视频教程的详细信息请到如下地址查看：<a href="http://hfbin.cn" target="_blank" rel="noopener">http://hfbin.cn</a><br>教程分类说明：<a href="http://hfbin.cn/categories/" target="_blank" rel="noopener">http://hfbin.cn/categories/</a></p>
-<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p><a href="http://hfbin.cn/2018/02/21/buy-%E5%85%B3%E4%BA%8E%E6%95%99%E7%A8%8B%E3%80%81%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F%E3%80%81%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA/" target="_blank" rel="noopener">关于教程、获取方式、温馨提示</a></p>
+        <p>接上篇：<a href="https://blog.csdn.net/fseast/article/details/95870937" target="_blank" rel="noopener">虚拟机上的Hadoop伪分布式和完全分布式的搭建</a></p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>搞来了三台阿里云服务器：<br>镜像：都是CentOS 7<br>JDK版本是1.8，<br>Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。</p>
+<p><strong>一、集群规划</strong><br>hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManager<br>hadoop102：DataNode，NodeManager<br>hadoop103：ResourceManager，DataNode，NodeManager</p>
+<p><strong>二、搭建：</strong><br>基本步骤与上一篇一样，配置文件需要配置的内容也都一样。这里只说使用阿里云服务器搭建与虚拟机不同的地方。</p>
+<p><strong>问题一：</strong><br>按照上篇文章配置方式配置完了以后，启动NameNode的时候起不来。<br>发现在/etc/hosts文件配置除了需要配置外网映射还要配置NameNode节点的内网，否则NameNode起不来，所以ResourceManager所安装的节点也需要配置该主机的内网。</p>
+<p>hadoop101的hosts文件配置地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">47.100.xx.xxx hadoop101	 #hadoop101外网地址映射</span><br><span class="line">120.79.xxx.xxx hadoop102</span><br><span class="line">39.108.xxx.xxx hadoop103</span><br><span class="line">172.19.xxx.xxx hadoop101  #hadoop101内网地址映射</span><br></pre></td></tr></table></figure>
+<p>可以配内网地址也可以配127.0.0.1 hadoop101<br>然后就可以顺利启动整个集群了。</p>
+<p><strong>问题二：</strong><br>关闭了防火墙，然后在hadoop101上传文件时，还是说通过50010端口数据传不过去：<br>INFO hdfs.DFSClient: Exception in createBlockOutputStream和<br>java.io.IOException: Got error, status message , ack with firstBadLink as </p>
+<p><img src="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这个时候web查看文件：只有hadoop101节点上保存了块，其他两个节点并没有。<br><img src="https://img-blog.csdnimg.cn/20190719124823884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>解决问题二：</strong><br>在Linux已经确实关闭防火墙了，但却还是说端口过不去，然后就发现阿里云服务器除了在Linux系统关闭防火墙，还需要在阿里云控制台开发端口：<br>既然说了50010端口过不去，那就给它开个50010端口：<br>这是hadoop101阿里云ECS服务器控制台截屏：<br><img src="https://img-blog.csdnimg.cn/20190719125508744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>这是hadoop103阿里云轻量级服务器控制台截屏：<br><img src="https://img-blog.csdnimg.cn/20190719125245350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">hadoop102并不需要在控制台操作，只需要在linux系统关闭防火墙即可，但其他两台不仅要在linux关闭，还要在控制台关闭。三台服务器都是不同时期买的，为什么会出现这样的差异情况也不清楚。</p>
+<hr>
+<p>分割线</p>
+<hr>
+<p>操作到这一步，开始上传文件，在NameNode节点也就是hadoop101上上传文件时，一切正常：<br><img src="https://img-blog.csdnimg.cn/20190719125940152.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190719130425764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<p>分割线</p>
+<hr>
+<p><strong>问题三：</strong><br>但是在hadoop102和hadoop103上上传文件时，就出现问题了：</p>
+<p>java.io.IOException: Got error, status message , ack with firstBadLink as 172.19.xxx.xxx:50010</p>
+<p>这个172.19.xxx.xxx为hadoop101的内网ip。大概意思应该是尝试通过内网IP的50010端口传入数据失败。令人头疼的事情就出现了：在hadoop101节点hosts文件配内网ip地址的话，传数据会从这个内网传入，如果不配内网ip的话，NameNode启动不了。<br><img src="https://img-blog.csdnimg.cn/20190719112345813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后在web页面查看：<br>只有hadoop102和hadoop103上有存储块，hadoop101节点上竟然没有：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190719130810286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">所以就可以才猜测到，NameNode在内部使用的是内网地址，具体细节不太清楚。现在这个问题还没有解决。（希望知道如何处理的相互交流一下。）<br>在往后对集群的操作只能先在hadoop101上操作。</p>
+<hr>
+<p>分割线</p>
+<hr>
+<p>我试了一下在阿里云服务器控制台单独删了hadoop103开放的50010端口之后。<br>在hadoop101上传文件就得到下面的情况：</p>
+<p>19/07/19 12:32:34 INFO hdfs.DFSClient: Exception in createBlockOutputStream<br>java.io.IOException: Got error, status message , ack with firstBadLink as  39.108.xxx.xxx:50010</p>
+<p><img src="https://img-blog.csdnimg.cn/20190719123625511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190719123709916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
     </div>
@@ -485,7 +427,7 @@ My friend promised me to go if I had the road
       
         <div class="post-tags">
           
-            <a href="/tags/java系列视频教程/" rel="tag"><i class="fa fa-tag"></i> java系列视频教程</a>
+            <a href="/tags/大数据系列视频教程/" rel="tag"><i class="fa fa-tag"></i> 大数据系列视频教程</a>
           
         </div>
       
@@ -498,18 +440,14 @@ My friend promised me to go if I had the road
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/22/buy-Google面试官亲授 升级Java面试/" rel="next" title="Google面试官亲授 升级Java面试">
-                <i class="fa fa-chevron-left"></i> Google面试官亲授 升级Java面试
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/23/buy-虚拟机上的Hadoop伪分布式和完全分布式的搭建/" rel="prev" title="虚拟机上的Hadoop伪分布式和完全分布式的搭建">
-                虚拟机上的Hadoop伪分布式和完全分布式的搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/22/buy-Google面试官亲授 升级Java面试/" rel="prev" title="Google面试官亲授 升级Java面试">
+                Google面试官亲授 升级Java面试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,7 +639,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#课程大纲"><span class="nav-number">1.</span> <span class="nav-text">课程大纲</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第1章-课程介绍"><span class="nav-number">1.1.</span> <span class="nav-text">第1章 课程介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第2章-项目设计"><span class="nav-number">1.2.</span> <span class="nav-text">第2章 项目设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第3章-环境搭建"><span class="nav-number">1.3.</span> <span class="nav-text">第3章 环境搭建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第4章-架构设计"><span class="nav-number">1.4.</span> <span class="nav-text">第4章 架构设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第5章-后台管理模块实现"><span class="nav-number">1.5.</span> <span class="nav-text">第5章 后台管理模块实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第6章-房源信息管理模块实现"><span class="nav-number">1.6.</span> <span class="nav-text">第6章 房源信息管理模块实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第7章-基础功能实现"><span class="nav-number">1.7.</span> <span class="nav-text">第7章 基础功能实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第8章-搜索引擎实现"><span class="nav-number">1.8.</span> <span class="nav-text">第8章 搜索引擎实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第9章-基于百度地图的找房功能"><span class="nav-number">1.9.</span> <span class="nav-text">第9章 基于百度地图的找房功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第10章-会员系统"><span class="nav-number">1.10.</span> <span class="nav-text">第10章 会员系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第11章-ElasticSearch优化"><span class="nav-number">1.11.</span> <span class="nav-text">第11章 ElasticSearch优化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第12章-基于ELK的应用分析"><span class="nav-number">1.12.</span> <span class="nav-text">第12章 基于ELK的应用分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第13章-项目上线"><span class="nav-number">1.13.</span> <span class="nav-text">第13章 项目上线</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第14章-课程总结"><span class="nav-number">1.14.</span> <span class="nav-text">第14章 课程总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#教程截图"><span class="nav-number">2.</span> <span class="nav-text">教程截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更多教程"><span class="nav-number">3.</span> <span class="nav-text">更多教程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取方式"><span class="nav-number">4.</span> <span class="nav-text">获取方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建"><span class="nav-number">1.</span> <span class="nav-text">搭建</span></a></li></ol></div>
             
 
           </div>
