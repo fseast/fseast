@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="description" content="搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop103：ResourceManager，DataNode，No">
 <meta name="keywords" content="大数据系列视频教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云服务器上的Hadoop伪分布式和完全分布式的搭建">
 <meta property="og:url" content="http://yoursite.com/2018/02/23/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/index.html">
 <meta property="og:site_name" content="Fseast Blog">
-<meta property="og:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta property="og:description" content="搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop103：ResourceManager，DataNode，No">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719124823884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125508744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
@@ -113,10 +113,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719130810286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123625511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123709916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-09-10T17:33:35.205Z">
+<meta property="og:updated_time" content="2019-09-10T17:55:42.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云服务器上的Hadoop伪分布式和完全分布式的搭建">
-<meta name="twitter:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="twitter:description" content="搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop103：ResourceManager，DataNode，No">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 
 
@@ -382,8 +382,7 @@ My friend promised me to go if I had the road
       
 
       
-        <p>接上篇：<a href="https://blog.csdn.net/fseast/article/details/95870937" target="_blank" rel="noopener">虚拟机上的Hadoop伪分布式和完全分布式的搭建</a></p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>搞来了三台阿里云服务器：<br>镜像：都是CentOS 7<br>JDK版本是1.8，<br>Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。</p>
+        <h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>搞来了三台阿里云服务器：<br>镜像：都是CentOS 7<br>JDK版本是1.8，<br>Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。</p>
 <p><strong>一、集群规划</strong><br>hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManager<br>hadoop102：DataNode，NodeManager<br>hadoop103：ResourceManager，DataNode，NodeManager</p>
 <p><strong>二、搭建：</strong><br>基本步骤与上一篇一样，配置文件需要配置的内容也都一样。这里只说使用阿里云服务器搭建与虚拟机不同的地方。</p>
 <p><strong>问题一：</strong><br>按照上篇文章配置方式配置完了以后，启动NameNode的时候起不来。<br>发现在/etc/hosts文件配置除了需要配置外网映射还要配置NameNode节点的内网，否则NameNode起不来，所以ResourceManager所安装的节点也需要配置该主机的内网。</p>
@@ -449,6 +448,10 @@ My friend promised me to go if I had the road
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/25/buy-（一）HDFS的认识及使用Java对其的简单操作/" rel="prev" title="（一）HDFS的认识及使用Java对其的简单操作">
+                （一）HDFS的认识及使用Java对其的简单操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -555,7 +558,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -577,7 +580,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
