@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="大数据系列视频教程," />
 
 
 
@@ -96,15 +96,28 @@
 
 
 
-<meta name="description" content="My friend promised me to go if I had the road">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fseast Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="keywords" content="大数据系列视频教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云服务器上的Hadoop伪分布式和完全分布式的搭建">
+<meta property="og:url" content="http://yoursite.com/2018/02/23/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/index.html">
 <meta property="og:site_name" content="Fseast Blog">
-<meta property="og:description" content="My friend promised me to go if I had the road">
+<meta property="og:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719124823884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125508744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125245350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719125940152.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719130425764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719112345813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719130810286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123625511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190719123709916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-10T17:33:35.205Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fseast Blog">
-<meta name="twitter:description" content="My friend promised me to go if I had the road">
+<meta name="twitter:title" content="阿里云服务器上的Hadoop伪分布式和完全分布式的搭建">
+<meta name="twitter:description" content="接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建 搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。 一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop10">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -134,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/23/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/"/>
 
 
 
 
 
-  <title>Fseast Blog</title>
+  <title>阿里云服务器上的Hadoop伪分布式和完全分布式的搭建 | Fseast Blog</title>
   
 
 
@@ -158,8 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,9 +278,9 @@ My friend promised me to go if I had the road
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -298,9 +310,7 @@ My friend promised me to go if I had the road
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/" itemprop="url">阿里云服务器上的Hadoop伪分布式和完全分布式的搭建</a></h1>
+          <h1 class="post-title" itemprop="name headline">阿里云服务器上的Hadoop伪分布式和完全分布式的搭建</h1>
         
 
         <div class="post-meta">
@@ -372,23 +382,35 @@ My friend promised me to go if I had the road
       
 
       
-        
-          
-          接上篇：虚拟机上的Hadoop伪分布式和完全分布式的搭建
-搭建搞来了三台阿里云服务器：镜像：都是CentOS 7JDK版本是1.8，Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。
-一、集群规划hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManagerhadoop102：DataNode，NodeManagerhadoop103：ResourceManager，DataNode，NodeManager
-二、搭建：基本步骤与上一篇一样，配置文件需要配置的内容也都一样。这里只说使用阿里云服务器搭建与虚拟机不同的地方。
-问题一：按照上篇文章配置方式配置完了以后，启动NameNode的时候起不来。发现在/etc/hosts文件配置除了需要配置外网映射还要配置NameNode节点的内网，否则NameNode起不来，所以ResourceManager所安装的节点也需要配置该主机的内网。
-hadoop101的hosts文件配置地址
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/buy-阿里云服务器上的Hadoop伪分布式和完全分布式的搭建/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>接上篇：<a href="https://blog.csdn.net/fseast/article/details/95870937" target="_blank" rel="noopener">虚拟机上的Hadoop伪分布式和完全分布式的搭建</a></p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>搞来了三台阿里云服务器：<br>镜像：都是CentOS 7<br>JDK版本是1.8，<br>Hadoop版本是2.7.2，与上一篇虚拟机搭建用的软件包一致。</p>
+<p><strong>一、集群规划</strong><br>hadoop101：NameNode，SecondaryNameNode，DataNode，NodeManager<br>hadoop102：DataNode，NodeManager<br>hadoop103：ResourceManager，DataNode，NodeManager</p>
+<p><strong>二、搭建：</strong><br>基本步骤与上一篇一样，配置文件需要配置的内容也都一样。这里只说使用阿里云服务器搭建与虚拟机不同的地方。</p>
+<p><strong>问题一：</strong><br>按照上篇文章配置方式配置完了以后，启动NameNode的时候起不来。<br>发现在/etc/hosts文件配置除了需要配置外网映射还要配置NameNode节点的内网，否则NameNode起不来，所以ResourceManager所安装的节点也需要配置该主机的内网。</p>
+<p>hadoop101的hosts文件配置地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">47.100.xx.xxx hadoop101	 #hadoop101外网地址映射</span><br><span class="line">120.79.xxx.xxx hadoop102</span><br><span class="line">39.108.xxx.xxx hadoop103</span><br><span class="line">172.19.xxx.xxx hadoop101  #hadoop101内网地址映射</span><br></pre></td></tr></table></figure>
+<p>可以配内网地址也可以配127.0.0.1 hadoop101<br>然后就可以顺利启动整个集群了。</p>
+<p><strong>问题二：</strong><br>关闭了防火墙，然后在hadoop101上传文件时，还是说通过50010端口数据传不过去：<br>INFO hdfs.DFSClient: Exception in createBlockOutputStream和<br>java.io.IOException: Got error, status message , ack with firstBadLink as </p>
+<p><img src="https://img-blog.csdnimg.cn/20190719084716612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这个时候web查看文件：只有hadoop101节点上保存了块，其他两个节点并没有。<br><img src="https://img-blog.csdnimg.cn/20190719124823884.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>解决问题二：</strong><br>在Linux已经确实关闭防火墙了，但却还是说端口过不去，然后就发现阿里云服务器除了在Linux系统关闭防火墙，还需要在阿里云控制台开发端口：<br>既然说了50010端口过不去，那就给它开个50010端口：<br>这是hadoop101阿里云ECS服务器控制台截屏：<br><img src="https://img-blog.csdnimg.cn/20190719125508744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>这是hadoop103阿里云轻量级服务器控制台截屏：<br><img src="https://img-blog.csdnimg.cn/20190719125245350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">hadoop102并不需要在控制台操作，只需要在linux系统关闭防火墙即可，但其他两台不仅要在linux关闭，还要在控制台关闭。三台服务器都是不同时期买的，为什么会出现这样的差异情况也不清楚。</p>
+<hr>
+<p>分割线</p>
+<hr>
+<p>操作到这一步，开始上传文件，在NameNode节点也就是hadoop101上上传文件时，一切正常：<br><img src="https://img-blog.csdnimg.cn/20190719125940152.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190719130425764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<p>分割线</p>
+<hr>
+<p><strong>问题三：</strong><br>但是在hadoop102和hadoop103上上传文件时，就出现问题了：</p>
+<p>java.io.IOException: Got error, status message , ack with firstBadLink as 172.19.xxx.xxx:50010</p>
+<p>这个172.19.xxx.xxx为hadoop101的内网ip。大概意思应该是尝试通过内网IP的50010端口传入数据失败。令人头疼的事情就出现了：在hadoop101节点hosts文件配内网ip地址的话，传数据会从这个内网传入，如果不配内网ip的话，NameNode启动不了。<br><img src="https://img-blog.csdnimg.cn/20190719112345813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后在web页面查看：<br>只有hadoop102和hadoop103上有存储块，hadoop101节点上竟然没有：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190719130810286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">所以就可以才猜测到，NameNode在内部使用的是内网地址，具体细节不太清楚。现在这个问题还没有解决。（希望知道如何处理的相互交流一下。）<br>在往后对集群的操作只能先在hadoop101上操作。</p>
+<hr>
+<p>分割线</p>
+<hr>
+<p>我试了一下在阿里云服务器控制台单独删了hadoop103开放的50010端口之后。<br>在hadoop101上传文件就得到下面的情况：</p>
+<p>19/07/19 12:32:34 INFO hdfs.DFSClient: Exception in createBlockOutputStream<br>java.io.IOException: Got error, status message , ack with firstBadLink as  39.108.xxx.xxx:50010</p>
+<p><img src="https://img-blog.csdnimg.cn/20190719123625511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190719123709916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZzZWFzdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
       
     </div>
     
@@ -403,166 +425,36 @@ hadoop101的hosts文件配置地址
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/buy-虚拟机上的Hadoop伪分布式和完全分布式的搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fseast">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/36739712?s=400&u=74c78513a2397b5152a72351de97c22dc3c060c5&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fseast Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/buy-虚拟机上的Hadoop伪分布式和完全分布式的搭建/" itemprop="url">虚拟机上的Hadoop伪分布式和完全分布式的搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-23T09:10:11+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
-                    <span itemprop="name">Hadoop</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/大数据系列视频教程/" rel="tag"><i class="fa fa-tag"></i> 大数据系列视频教程</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          一、Hadoop1.Hadoop的组成简单了解一下Hadoop2.x时代的组成：HDFS  负责数据存储Yarn  负责资源调度MapReduce  负责计算Common    辅助工具
-1.1HDFS架构概述HDFS(Hadoop Distributed File System)（1）NameNode (nn)：存储文件的元数据，如文件名，文件目录结构，文件属性（生成时间、副本数、文件权限），以及每个文件的快列表和块所在的DataNode等。（2）DataNode (dn)：在本地文件系统存储文件块数据，以及块数据的校验和。（3）Secondary NameNode (2nn)：用来监控HDFS状态的辅助后台程序，每隔一段时间获取HDFS元数据的快照。
-1.2YARN架构概述
-ResourceManager（RM）主要作用如下：（1）处理客户端请求（2）监控NodeManager（3）启动或监控ApplicationMaster（4）资源的分配与调度
-NodeManger（NM）主要作
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/buy-虚拟机上的Hadoop伪分布式和完全分布式的搭建/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/23/buy-虚拟机上的Hadoop伪分布式和完全分布式的搭建/" rel="next" title="虚拟机上的Hadoop伪分布式和完全分布式的搭建">
+                <i class="fa fa-chevron-left"></i> 虚拟机上的Hadoop伪分布式和完全分布式的搭建
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -572,10 +464,37 @@ NodeManger（NM）主要作
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -583,6 +502,10 @@ NodeManger（NM）主要作
 
 
           
+
+  
+
+
 
         </div>
         
@@ -603,8 +526,17 @@ NodeManger（NM）主要作
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -697,6 +629,22 @@ NodeManger（NM）主要作
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建"><span class="nav-number">1.</span> <span class="nav-text">搭建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -854,6 +802,10 @@ NodeManger（NM）主要作
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
