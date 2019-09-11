@@ -141,26 +141,4 @@
     
   </entry>
   
-  <entry>
-    <title>测试</title>
-    <link href="http://yoursite.com/2018/02/22/buy-%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2018/02/22/buy-测试/</id>
-    <published>2018-02-22T00:11:11.000Z</published>
-    <updated>2019-09-11T05:54:43.423Z</updated>
-    
-    <content type="html"><![CDATA[<p>test112</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;test112&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
